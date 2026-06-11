@@ -86,7 +86,7 @@ mods:
     side: both
 
   - name: "AllTheLeaks (Memory Leak Fix)"
-    url: "https://mediafilez.forgecdn.net/files/5898/444/alltheleaks-1.1.1+1.20.1-forge.jar"
+    url: "https://mediafilez.forgecdn.net/files/7235/989/alltheleaks-1.1.1%2B1.20.1-forge.jar"
     side: both
 
   - name: "Alshanex's Familiars"
@@ -129,9 +129,9 @@ mods:
     url: "https://cdn.modrinth.com/data/lhGA9TYQ/versions/1MKTLiiG/architectury-9.2.14-forge.jar"
     side: both
 
-  - name: "Armory of Remnants"
-    url: "https://mediafilez.forgecdn.net/files/8168/85/armor_of_remnants-1.20.1-1.0.5-hotfix.jar"
-    side: both
+  # - name: "Armory of Remnants"  # disabled: CurseForge CDN 403, no public download URL
+  #   url: "https://mediafilez.forgecdn.net/files/8168/85/armor_of_remnants-1.20.1-1.0.5-hotfix.jar"
+  #   side: both
 
   - name: "Ash API"
     url: "https://cdn.modrinth.com/data/Q8xUICr6/versions/mfSxdCmQ/ash_api-forge-3.0.2%2B1.20.1.jar"
@@ -706,7 +706,7 @@ mods:
   # ── G ──────────────────────────────────────────────────────────────────────
 
   - name: "Gallant Gauntlets"
-    url: "https://mediafilez.forgecdn.net/files/5653/770/gauntlets-1.0.1.jar"
+    url: "https://cdn.modrinth.com/data/daIJrdNd/versions/d27dGswD/gauntlets-1.0.1-1.20.1.jar"
     side: both
 
   - name: "Game Stages"
