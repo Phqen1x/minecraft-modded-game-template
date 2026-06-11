@@ -1,257 +1,1626 @@
 # ─────────────────────────────────────────────────────────────────────────────
-# Pack configuration — edit this file to define your modded Minecraft experience
-# Full reference: https://github.com/kenvandine/minecraft-server-snap/blob/main/docs/pack-yaml-reference.md
+# Pack configuration — Otherworld [Dungeons & Dragons] v8 HF2
+# Minecraft 1.20.1 + Forge
+# Full reference: https://github.com/Phqen1x/minecraft-server-snap/blob/main/docs/pack-yaml-reference.md
 # ─────────────────────────────────────────────────────────────────────────────
 
-# Display name shown in the launcher window and GitHub release title
-name: "Kaden's Minecraft World"
+name: "Otherworld [Dungeons & Dragons]"
 
-# Modpack version — set automatically from git tags at build time
 version: "0.0.0-devel"
 
-# Target Minecraft Java Edition version
-minecraft_version: "1.21.1"
+minecraft_version: "1.20.1"
 
-# Mod loader — only "fabric" is supported
-mod_loader: fabric
+mod_loader: forge
 
-# Fabric loader version — "latest" resolves automatically at build time
-# Pin to a specific version (e.g. "0.16.9") for reproducible builds
+# Pin to the exact Forge build used by Otherworld v8 HF2, or use "latest"
 mod_loader_version: "latest"
 
-# Fabric installer version — used to generate the server JAR
+# Unused for Forge packs (Fabric installer only)
 installer_version: "latest"
 
-# ─── Microsoft authentication ──────────────────────────────────────────────
-# Required for online play. Do NOT put your client ID here — set it as a
-# GitHub Actions secret named AZURE_CLIENT_ID instead. It will be injected
-# at build time and kept out of version control.
-# Setup guide: https://github.com/kenvandine/minecraft-server-snap/blob/main/docs/azure-setup.md
-# If the secret is not set, the launcher will use offline mode only.
+background_color: "#0a0618"
 
-# ─── Launcher appearance ───────────────────────────────────────────────────
-# Background color for the launcher hero panel (CSS hex color)
-background_color: "#0d1117"
-
-# ─── Java memory settings ──────────────────────────────────────────────────
-# Passed to the JVM when launching Minecraft
-# Increase Xmx for heavier modpacks (50+ mods typically need 6G+)
-java_args: "-Xms2G -Xmx4G"
-
-# ─── Shader packs ──────────────────────────────────────────────────────────
-# Shader packs are client-only and placed in shaderpacks/ in the game directory.
-# Requires Iris Shaders (or another shader-compatible renderer) in the mods list.
-#
-# URL tips:
-#   Modrinth: open shader page → Versions → right-click download → Copy link address
-#   Shader pack URLs end in .zip (not .jar)
-#
-shader_packs:
-  - name: "Complementary Reimagined"
-    url: "https://cdn.modrinth.com/data/HVnmMxH1/versions/836bPNGo/ComplementaryReimagined_r5.7.1.zip"
+# Forge + 300+ mods needs plenty of heap
+java_args: "-Xms4G -Xmx8G"
 
 # ─── Mods ──────────────────────────────────────────────────────────────────
-# side: both   → included in server AND client artifacts (most mods)
-# side: server → server artifact only (e.g. profiling, anti-cheat utilities)
-# side: client → client artifact only (e.g. Sodium, Iris, UI mods)
+# side: both   → server AND client
+# side: server → server artifact only
+# side: client → client artifact only
 #
-# URL tips:
-#   Modrinth: open mod page → Versions → right-click download → Copy link address
-#   Use permanent CDN URLs (modrinth CDN URLs are stable per version)
+# URLs marked "# TODO" need a direct CDN link before this pack will build.
+# For CurseForge-only mods: https://mediafilez.forgecdn.net/files/{id//1000}/{id%1000}/{filename}
 mods:
-  # Fabric API is required by almost all Fabric mods
-  - name: "Fabric API"
-    url: "https://cdn.modrinth.com/data/P7dR8mSH/versions/ID8pq1x1/fabric-api-0.116.10%2B1.21.1.jar"
-    side: both
+  # ── A ──────────────────────────────────────────────────────────────────────
 
-  # Iris Shaders — required if you want to use shader packs (uncomment to enable)
-  - name: "Iris Shaders"
-    url: "https://cdn.modrinth.com/data/YL57xq9U/versions/zsoi0dso/iris-fabric-1.8.8%2Bmc1.21.1.jar"
-    side: client
-    
-  # Sodium — client-side rendering optimization (not needed on server)
-  - name: "Sodium"
-    url: "https://cdn.modrinth.com/data/AANobbMI/versions/u1OEbNKx/sodium-fabric-0.6.13%2Bmc1.21.1.jar"
+  - name: "(ARCHIVE) Faster Random"
+    url: "https://www.curseforge.com/minecraft/mc-mods/faster-random"  # TODO: find direct CDN URL
+    side: server
+
+  - name: "[EMF] Entity Model Features"
+    url: "https://cdn.modrinth.com/data/4I1XuqiY/versions/VSBDdOOY/entity_model_features-3.2.4-1.20.1-forge.jar"
     side: client
 
-  # Lithium — server and client logic optimization
-  - name: "Lithium"
-    url: "https://cdn.modrinth.com/data/gvQqBUqZ/versions/XQJtuOTA/lithium-fabric-0.15.3%2Bmc1.21.1.jar"
-    side: both
-
-  # FerriteCore — server and client logic optimization
-  - name: "FerriteCore"
-    url: "https://cdn.modrinth.com/data/uXXizFIs/versions/sOzRw3CG/ferritecore-7.0.3-fabric.jar"
-    side: both
-
-  # ScalableLux — Contains all the performance improvements from Starlight with additional bug fixes.
-  - name: "ScalableLux"
-    url: "https://cdn.modrinth.com/data/Ps1zyz6x/versions/Yx1tgJMI/ScalableLux-0.1.0.1%2Bfabric.d0d58ab-all.jar"
-    side: both
-
-  # Entity Culling — Using async path-tracing to hide Block-/Entities that are not visible.
-  - name: "Entity Culling"
-    url: "https://cdn.modrinth.com/data/NNAgCjsB/versions/zzguHbcL/entityculling-fabric-1.10.0-mc1.21.1.jar"
+  - name: "[ETF] Entity Texture Features"
+    url: "https://cdn.modrinth.com/data/BVzZfTc1/versions/GQlTHleX/entity_texture_features_1.20.1-forge-7.1.jar"
     side: client
 
-  # Krypton — A mod to optimize the Minecraft networking stack.
-  - name: "Krypton"
-    url: "https://cdn.modrinth.com/data/fQEb0iXm/versions/Acz3ttTp/krypton-0.2.8.jar"
+  - name: "Abridged"
+    url: "https://www.curseforge.com/minecraft/mc-mods/abridged"  # TODO: find direct CDN URL
     side: both
 
-  # Concurrent Chunk Management Engine — A Fabric mod designed to improve the chunk performance of Minecraft.
-  - name: "C2ME"
-    url: "https://cdn.modrinth.com/data/VSNURh3q/versions/DSqOVCaF/c2me-fabric-mc1.21.1-0.3.0%2Balpha.0.362.jar"
+  - name: "Additional Attributes"
+    url: "https://www.curseforge.com/minecraft/mc-mods/additional-attributes"  # TODO: find direct CDN URL
     side: both
 
-  # Jade — Shows information about what you are looking at. (Hwyla/Waila fork for Minecraft 1.16+)
-  - name: "Jade"
-    url: "https://cdn.modrinth.com/data/nvQzSEkH/versions/5Sbkzz4O/Jade-1.21.1-Fabric-15.10.5.jar"
+  - name: "Advanced Loot Info"
+    url: "https://www.curseforge.com/minecraft/mc-mods/advanced-loot-info"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "AeroBlender"
+    url: "https://www.curseforge.com/minecraft/mc-mods/aeroblender"  # TODO: find direct CDN URL
     side: both
 
-  # Jade — Shows information about what you are looking at. (Hwyla/Waila fork for Minecraft 1.16+)
-  - name: "Jade Modded Entities"
-    url: "https://cdn.modrinth.com/data/GAJkSU0A/versions/NfLGfYBH/jademoddedentities-fabric-1.21.1-1.3.1.jar"
+  - name: "Aether Delight"
+    url: "https://www.curseforge.com/minecraft/mc-mods/aether-delight"  # TODO: find direct CDN URL
     side: both
 
-  # Spark — spark is a performance profiler for Minecraft clients, servers and proxies.
-  - name: "Spark"
-    url: "https://cdn.modrinth.com/data/l6YH9Als/versions/cALUj9l1/spark-1.10.109-fabric.jar"
+  - name: "Aether Villages"
+    url: "https://www.curseforge.com/minecraft/mc-mods/aether-villages"  # TODO: find direct CDN URL
     side: both
 
-  # AppleSkin — Food/hunger-related HUD improvements.
+  - name: "Aether: Lost Content Addon"
+    url: "https://www.curseforge.com/minecraft/mc-mods/aether-lost-content"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Alex's Caves"
+    url: "https://cdn.modrinth.com/data/U6GY0xp0/versions/lC8HHXOF/alexscaves-2.0.2.jar"
+    side: both
+
+  - name: "Alex's Delight"
+    url: "https://www.curseforge.com/minecraft/mc-mods/alexs-delight"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Alex's Mobs"
+    url: "https://cdn.modrinth.com/data/2cMuAZAp/versions/XoIASRVU/alexsmobs-1.22.9.jar"
+    side: both
+
+  - name: "AllTheLeaks (Memory Leak Fix)"
+    url: "https://www.curseforge.com/minecraft/mc-mods/alltheleaks"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Alshanex's Familiars"
+    url: "https://www.curseforge.com/minecraft/mc-mods/alshanexs-familiars"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Alternate Current"
+    url: "https://cdn.modrinth.com/data/r0v8vy1s/versions/kC6SY4Zp/alternate_current-mc1.20-1.7.0.jar"
+    side: server
+
+  - name: "Alternate Origin GUI"
+    url: "https://www.curseforge.com/minecraft/mc-mods/altorigingui"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Ancient Aether"
+    url: "https://www.curseforge.com/minecraft/mc-mods/ancient-aether"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Ancient Reforging"
+    url: "https://www.curseforge.com/minecraft/mc-mods/ancient-reforging"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Apotheosis"
+    url: "https://mediafilez.forgecdn.net/files/6461/960/Apotheosis-1.20.1-7.4.8.jar"
+    side: both
+
+  - name: "Apothic Attributes"
+    url: "https://www.curseforge.com/minecraft/mc-mods/apothic-attributes"  # TODO: find direct CDN URL
+    side: both
+
   - name: "AppleSkin"
-    url: "https://cdn.modrinth.com/data/EsAfCjCV/versions/b5ZiCjAr/appleskin-fabric-mc1.21-3.0.6.jar"
+    url: "https://cdn.modrinth.com/data/EsAfCjCV/versions/XdXDExVF/appleskin-forge-mc1.20.1-2.5.1.jar"
+    side: client
+
+  - name: "Aquamirae [Forge Edition]"
+    url: "https://cdn.modrinth.com/data/k23mNPhZ/versions/A6aIqoJZ/aquamirae-forge-1.20.1-6.4.0.jar"
     side: both
 
-  # Clumps — Clumps XP orbs together to reduce lag.
-  - name: "Clumps"
-    url: "https://cdn.modrinth.com/data/Wnxd13zP/versions/3ene3W1l/Clumps-fabric-1.21.1-19.0.0.1.jar"
+  - name: "Architectury API"
+    url: "https://cdn.modrinth.com/data/lhGA9TYQ/versions/1MKTLiiG/architectury-9.2.14-forge.jar"
     side: both
 
-  # Carpet — Take full control over your vanilla game.
-  - name: "Carpet Mod"
-    url: "https://cdn.modrinth.com/data/TQTTVgYE/versions/f2mvlGrg/fabric-carpet-1.21-1.4.147%2Bv240613.jar"
+  - name: "Armory of Remnants"
+    url: "https://www.curseforge.com/minecraft/mc-mods/armory-of-remnants"  # TODO: find direct CDN URL
     side: both
 
-  # Terralith — Adds 100+ biomes using vanilla blocks only
-  - name: "Terralith"
-    url: "https://cdn.modrinth.com/data/8oi3bsk5/versions/MuJMtPGQ/Terralith_1.21.x_v2.5.8.jar"
+  - name: "Ash API"
+    url: "https://www.curseforge.com/minecraft/mc-mods/ash-api"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Athena"
+    url: "https://www.curseforge.com/minecraft/mc-mods/athena"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "AttributeFix"
+    url: "https://cdn.modrinth.com/data/lOOpEntO/versions/ihWybkI9/AttributeFix-Forge-1.20.1-21.0.5.jar"
+    side: both
+
+  - name: "Auto Leveling"
+    url: "https://www.curseforge.com/minecraft/mc-mods/auto-leveling"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "AzureLib"
+    url: "https://cdn.modrinth.com/data/7zlUOZvb/versions/xMdsbFvi/azurelib-neo-1.20.1-3.1.10.jar"
+    side: both
+
+  # ── B ──────────────────────────────────────────────────────────────────────
+
+  - name: "BadOptimizations"
+    url: "https://cdn.modrinth.com/data/g96Z4WVZ/versions/DIugITgU/BadOptimizations-2.4.1-1.20.1.jar"
+    side: client
+
+  - name: "BaguetteLib"
+    url: "https://www.curseforge.com/minecraft/mc-mods/baguettelib"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Balm"
+    url: "https://cdn.modrinth.com/data/MBAkmtvl/versions/8rz04Kha/balm-forge-1.20.1-7.3.38-all.jar"
+    side: both
+
+  - name: "BCLib"
+    url: "https://www.curseforge.com/minecraft/mc-mods/bclib"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Beautiful Enchanted Books"
+    url: "https://www.curseforge.com/minecraft/mc-mods/beautiful-enchanted-books"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Bee Fix"
+    url: "https://www.curseforge.com/minecraft/mc-mods/bee-fix"  # TODO: find direct CDN URL
     side: server
 
-  # Terralith —
-  - name: "Stardust Labs Intro Message Remover"
-    url: "https://cdn.modrinth.com/data/sk4iFZGy/versions/BHr8OLOk/zRemove_SDL_Intro_v1.2.2.jar"
+  - name: "Better Advancements"
+    url: "https://cdn.modrinth.com/data/Q2OqKxDG/versions/EKwDaD23/BetterAdvancements-Forge-1.20.1-0.4.2.60.jar"
+    side: client
+
+  - name: "Better Clouds"
+    url: "https://cdn.modrinth.com/data/5srFLIaK/versions/hQgUzZa4/better-clouds-1.3.37-beta%2B1.20.1-forge.rev.e63efe2.jar"
+    side: client
+
+  - name: "Better Combat"
+    url: "https://cdn.modrinth.com/data/5sy6g3kz/versions/rnhiaw3t/bettercombat-forge-1.9.0%2B1.20.1.jar"
+    side: both
+
+  - name: "Better Combat Particle"
+    url: "https://www.curseforge.com/minecraft/mc-mods/better-combat-particle"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Better Combat x Apotheosis Compat"
+    url: "https://www.curseforge.com/minecraft/mc-mods/apothic-combat"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Better Compatibility Checker"
+    url: "https://www.curseforge.com/minecraft/mc-mods/better-compatibility-checker"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Better Mods Button"
+    url: "https://www.curseforge.com/minecraft/mc-mods/better-mods-button"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Better World Loading (Forge)"
+    url: "https://www.curseforge.com/minecraft/mc-mods/better-world-loading-forge"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "BetterEnd"
+    url: "https://cdn.modrinth.com/data/aSIFLYIc/versions/K8UqkXhI/BetterEnd-20.0.8.jar"
+    side: both
+
+  - name: "Biome Music"
+    url: "https://www.curseforge.com/minecraft/mc-mods/biome-music"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "BiomeSpy"
+    url: "https://www.curseforge.com/minecraft/mc-mods/biomespy"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "BisectHosting Server Integration Menu"
+    url: "https://www.curseforge.com/minecraft/mc-mods/bisecthosting-server-integration-menu-forge"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "BlockUI"
+    url: "https://mediafilez.forgecdn.net/files/7541/343/blockui-1.20.1-1.0.193.jar"
+    side: both
+
+  - name: "Bookshelf"
+    url: "https://cdn.modrinth.com/data/uy4Cnpcm/versions/7eS5OIHj/Bookshelf-Forge-1.20.1-20.2.15.jar"
+    side: both
+
+  - name: "Born in Chaos"
+    url: "https://www.curseforge.com/minecraft/mc-mods/born-in-chaos"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Born In Configuration"
+    url: "https://www.curseforge.com/minecraft/mc-mods/born-in-configuration"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Boss Ultimatum"
+    url: "https://www.curseforge.com/minecraft/mc-mods/boss-ultimatum"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Bosses of Mass Destruction"
+    url: "https://cdn.modrinth.com/data/hFUzfDsn/versions/2Kw4xPhp/BOMD-Forge-1.20.1-1.1.2.jar"
+    side: both
+
+  - name: "Bountiful"
+    url: "https://cdn.modrinth.com/data/BpwWFOVM/versions/EM7Su3PD/Bountiful-6.0.4%2B1.20.1-forge.jar"
+    side: both
+
+  - name: "Bountiful Villager"
+    url: "https://www.curseforge.com/minecraft/mc-mods/bountiful-villager"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Brewin' And Chewin'"
+    url: "https://www.curseforge.com/minecraft/mc-mods/brewin-and-chewin"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Butchery"
+    url: "https://www.curseforge.com/minecraft/mc-mods/butchery"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Byzantine Styles Pack for Minecolonies"
+    url: "https://www.curseforge.com/minecraft/mc-mods/byzantine-styles-pack-for-minecolonies"  # TODO: find direct CDN URL
+    side: both
+
+  # ── C ──────────────────────────────────────────────────────────────────────
+
+  - name: "Caelus API"
+    url: "https://cdn.modrinth.com/data/40FYwb4z/versions/mRry0DgY/caelus-forge-3.2.0%2B1.20.1.jar"
+    side: both
+
+  - name: "Carry On"
+    url: "https://cdn.modrinth.com/data/joEfVgkn/versions/edGQD16r/carryon-forge-1.20.1-2.1.2.7.jar"
+    side: both
+
+  - name: "Cataclysm x YUNG's Better Nether Fortresses Compat"
+    url: "https://www.curseforge.com/minecraft/mc-mods/cataclysm-x-yungs"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Catalytic Lib"
+    url: "https://www.curseforge.com/minecraft/mc-mods/catalytic-lib"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "CERBON's API"
+    url: "https://www.curseforge.com/minecraft/mc-mods/cerbons-api"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Certain Questing Additions"
+    url: "https://www.curseforge.com/minecraft/mc-mods/certain-questing-additions"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Cerulean"
+    url: "https://www.curseforge.com/minecraft/mc-mods/cerulean"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Champions Unofficial"
+    url: "https://www.curseforge.com/minecraft/mc-mods/champions-unofficial"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Charm of Undying"
+    url: "https://www.curseforge.com/minecraft/mc-mods/charm-of-undying"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Chipped"
+    url: "https://cdn.modrinth.com/data/BAscRYKm/versions/pi3f4er3/chipped-forge-1.20.1-3.0.7.jar"
+    side: both
+
+  - name: "Chunk Sending"
+    url: "https://www.curseforge.com/minecraft/mc-mods/chunk-sending-forge-fabric"  # TODO: find direct CDN URL
     side: server
 
-  # Biomes O' Plenty — Adds 50+ unique biomes to enhance your world, with new trees, flowers, and more!
-  #Requires GlitchCore and TerraBlender
-  - name: "Biomes O' Plenty"
-    url: "https://cdn.modrinth.com/data/HXF82T3G/versions/YPm4arUa/BiomesOPlenty-fabric-1.21.1-21.1.0.13.jar"
+  - name: "Citadel"
+    url: "https://cdn.modrinth.com/data/jJfV67b1/versions/lTAAe4sZ/citadel-2.6.3-1.20.1.jar"
     side: both
 
-  # GlitchCore — A library mod aimed at abstracting mod loaders and providing various utilities for our mods.
-  - name: "GlitchCore"
-    url: "https://cdn.modrinth.com/data/s3dmwKy5/versions/lbSHOhee/GlitchCore-fabric-1.21.1-2.1.0.0.jar"
-    side: both
-
-  # TerraBlender — A library mod for adding biomes in a simple and compatible manner!
-  - name: "TerraBlender"
-    url: "https://cdn.modrinth.com/data/kkmrDlKT/versions/XNtIBXyQ/TerraBlender-fabric-1.21.1-4.1.0.8.jar"
-    side: both
-
-  # Nature's Compass — Allows you to locate biomes anywhere in the world.
-  - name: "Nature's Compass"
-    url: "https://cdn.modrinth.com/data/fPetb5Kh/versions/9W2MUsnU/NaturesCompass-1.21.1-2.2.7-fabric.jar"
-    side: both
-
-  # Explorer's Compass — Allows you to locate structures anywhere in the world.
-  - name: "Explorer's Compass"
-    url: "https://cdn.modrinth.com/data/RV1qfVQ8/versions/i1WCJNIW/ExplorersCompass-1.21.1-2.2.5-fabric.jar"
-    side: both
-
-  # Nature's Spirit — A minecraft mod which enhances world generation with new biomes, blocks, and items.
-  - name: "Nature's Spirit"
-    url: "https://cdn.modrinth.com/data/WBvnqHfV/versions/TRMapjpU/naturespirit-2.2.5-1.21.1.jar"
-    side: both
-
-  # Falling Leaves — Adds a neat little particle effect to leaf blocks.
-  - name: "Falling Leaves"
-    url: "https://cdn.modrinth.com/data/WhbRG4iK/versions/Y0zS16Bk/fallingleaves-1.17.1%2B1.21.1.jar"
+  - name: "Client Crafting"
+    url: "https://www.curseforge.com/minecraft/mc-mods/client-crafting"  # TODO: find direct CDN URL
     side: client
 
-  # Effective — Fabric client-side mod designed to improve Minecraft's ambience through particles, visual effects and sounds.
-  # WARNING ---- INTENDED TO BE USED WITH FAST OR FANCY GRAPHICS, NOT FABULOUS
-  - name: "Effective"
-    url: "https://cdn.modrinth.com/data/pcPXJeZi/versions/ZV1N3Ikr/effective-2.4.8-1.21.1.jar"
-    side: client
-
-  # Ambient Sounds — Sounds.
-  - name: "Ambient Sounds"
-    url: "https://cdn.modrinth.com/data/fM515JnW/versions/D31kF2Wq/AmbientSounds_FABRIC_v6.3.5_mc1.21.1.jar"
-    side: client
-
-  # Visuality — Little visual improvements by adding a bunch of new particles.
-  - name: "Visuality"
-    url: "https://cdn.modrinth.com/data/rI0hvYcd/versions/dhKbgdIb/visuality-0.7.7%2B1.21.jar"
-    side: client
-
-  # HandCrafted — Make your house a home!
-  - name: "HandCrafted"
-    url: "https://cdn.modrinth.com/data/pJmCFF0p/versions/f0pKpUWd/handcrafted-fabric-1.21.1-4.0.3.jar"
+  - name: "Climate Rivers"
+    url: "https://www.curseforge.com/minecraft/mc-mods/climate-rivers"  # TODO: find direct CDN URL
     side: both
 
-  # Adorn — Decorate your home!
-  - name: "Adorn"
-    url: "https://cdn.modrinth.com/data/E6FUtRJh/versions/eOTfiVsw/Adorn-6.1.2%2B1.21.1-fabric.jar"
+  - name: "Cloth Config API"
+    url: "https://cdn.modrinth.com/data/9s6osm5g/versions/t8TXrZvZ/cloth-config-11.1.136-forge.jar"
     side: both
 
-  # Supplementaries — Vanilla+ additions: Jars, signposts, faucets, weather vanes spring launchers, sconces, planters, lights, decoration and automation
-  - name: "Supplementaries"
-    url: "https://cdn.modrinth.com/data/fFEIiSDQ/versions/wVkX2tMY/supplementaries-1.21-3.5.27-fabric.jar"
+  - name: "Cobweb"
+    url: "https://www.curseforge.com/minecraft/mc-mods/cobweb"  # TODO: find direct CDN URL
     side: both
 
-  # Beautify — Adds lots of vanilla-styled ways to spice up your builds.
-  - name: "Beautify"
-    url: "https://cdn.modrinth.com/data/DhSSvaxs/versions/ZyaUkJxq/beautify-2.0.0%2B1.21.1.jar"
+  - name: "Collective"
+    url: "https://cdn.modrinth.com/data/e0M1UDsY/versions/lH1VBD4w/collective-1.20.1-8.25.jar"
     side: both
 
-  # Fairy Lights — Decorative string lights to light up your world! A Fabric port.
-  - name: "Fairy Lights"
-    url: "https://cdn.modrinth.com/data/OuLVx5LM/versions/I5KAi0sD/fairylights-1.1.3%2B1.21.1_fabric.jar"
+  - name: "Colorwheel"
+    url: "https://www.curseforge.com/minecraft/mc-mods/colorwheel"  # TODO: find direct CDN URL
     side: both
 
-  # Comforts — Adds sleeping bags and hammocks for, respectively, portability and turning day to night, without setting new spawns. Comes in 16 different colors!
+  - name: "Colorwheel Patcher"
+    url: "https://www.curseforge.com/minecraft/mc-mods/colorwheel-patcher"  # TODO: find direct CDN URL
+    side: both
+
   - name: "Comforts"
-    url: "https://cdn.modrinth.com/data/SaCpeal4/versions/LUPOTXbk/comforts-fabric-9.0.5%2B1.21.1.jar"
+    url: "https://cdn.modrinth.com/data/SaCpeal4/versions/gBDsc134/comforts-forge-6.4.0%2B1.20.1.jar"
     side: both
 
-  # Critters and Companions — Adds a few new friends to your world!
-  - name: "Critters and Companions"
-    url: "https://cdn.modrinth.com/data/Yd4wb5wZ/versions/wHpQleS4/crittersandcompanions-fabric-1.21.1-2.3.4.jar"
+  - name: "Compatibility addon for MineColonies"
+    url: "https://www.curseforge.com/minecraft/mc-mods/minecolonies-compatibility"  # TODO: find direct CDN URL
     side: both
 
-  # PatPat — Allows you to pat ANY loved and unloved living mobs in Minecraft!
-  - name: "PatPat"
-    url: "https://cdn.modrinth.com/data/dw7LChq9/versions/rhN1HJcz/PatPat-1.2.3%2B1.21.1.jar"
+  - name: "Configured Defaults"
+    url: "https://www.curseforge.com/minecraft/mc-mods/configured-defaults"  # TODO: find direct CDN URL
     side: both
 
-  # Friends&Foes — Adds outvoted and forgotten mobs from the mob vote, expanding on their original concepts and adding new vanilla-like features. The mod includes: Copper Golem, Crab, Glare, Moobloom, Iceologer, Rascal, Tuff Golem, Wildfire, Illusioner, Zombie Horse
-  - name: "Friends&Foes"
-    url: "https://cdn.modrinth.com/data/POQ2i9zu/versions/SjoyrJsH/friendsandfoes-fabric-4.0.23%2Bmc1.21.1.jar"
+  - name: "Connectivity"
+    url: "https://www.curseforge.com/minecraft/mc-mods/connectivity"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Connector Extras"
+    url: "https://www.curseforge.com/minecraft/mc-mods/connector-extras"  # TODO: find direct CDN URL
     side: both
 
-  # Friends&FoesAddon — An addon for the Friends&Foes mod, adding a beekeeper hut structure.
-  - name: "Friends&Foes Beekeeper hut"
-    url: "https://cdn.modrinth.com/data/Kt4RVKEd/versions/zxhxIzv3/beekeeperhut-fabric-3.0.2%2Bmc1.21.1.jar"
+  - name: "Controlling"
+    url: "https://cdn.modrinth.com/data/xv94TkTM/versions/LH6Bi6Am/Controlling-forge-1.20.1-12.0.2.jar"
+    side: client
+
+  - name: "CorgiLib"
+    url: "https://www.curseforge.com/minecraft/mc-mods/corgilib"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "CoroUtil"
+    url: "https://www.curseforge.com/minecraft/mc-mods/coroutil"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Corpse"
+    url: "https://cdn.modrinth.com/data/WrpuIfhw/versions/7fc0hJN6/corpse-forge-1.20.1-1.0.23.jar"
+    side: both
+
+  - name: "Corpse x Curios API Compat"
+    url: "https://cdn.modrinth.com/data/pJGcKPh1/versions/gC9IUqZM/corpsecurioscompat-1.20.1-Forge-4.0.1.jar"
+    side: both
+
+  - name: "Crash Assistant"
+    url: "https://www.curseforge.com/minecraft/mc-mods/crash-assistant"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "CrashExploitFixer"
+    url: "https://www.curseforge.com/minecraft/mc-mods/crashexploitfixer"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "CraterLib"
+    url: "https://www.curseforge.com/minecraft/mc-mods/craterlib"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Create"
+    url: "https://cdn.modrinth.com/data/LNytGWDc/versions/8amzvn9x/create-1.20.1-6.0.8.jar"
+    side: both
+
+  - name: "Create Better FPS"
+    url: "https://www.curseforge.com/minecraft/mc-mods/create-better-fps"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Create Contraption Terminals"
+    url: "https://www.curseforge.com/minecraft/mc-mods/create-contraption-terminals"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Create: Slice & Dice"
+    url: "https://cdn.modrinth.com/data/GmjmRQ0A/versions/KWLI8Ng7/sliceanddice-forge-3.6.0.jar"
+    side: both
+
+  - name: "Create: Alex's Caves Compat"
+    url: "https://www.curseforge.com/minecraft/mc-mods/create-alexs-caves-compat"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Create: Central Kitchen"
+    url: "https://www.curseforge.com/minecraft/mc-mods/create-central-kitchen"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Create: Dynamic Village"
+    url: "https://www.curseforge.com/minecraft/mc-mods/dynamic-village"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Create: Enchantment Industry"
+    url: "https://cdn.modrinth.com/data/JWGBpFUP/versions/fBncZZdn/create_enchantment_industry-1.4.0-for-create-6.0.8.jar"
+    side: both
+
+  - name: "Create: Wizardry"
+    url: "https://www.curseforge.com/minecraft/mc-mods/create-wizardry"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "CreativeCore"
+    url: "https://cdn.modrinth.com/data/OsZiaDHq/versions/J9tluyYl/CreativeCore_FORGE_v2.12.38_mc1.20.1.jar"
+    side: both
+
+  - name: "Cupboard"
+    url: "https://www.curseforge.com/minecraft/mc-mods/cupboard"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Curios API"
+    url: "https://cdn.modrinth.com/data/vvuO3ImH/versions/IPQlZkz1/curios-forge-5.14.1%2B1.20.1.jar"
+    side: both
+
+  - name: "Cursors Extended"
+    url: "https://www.curseforge.com/minecraft/mc-mods/minecraft-cursor"  # TODO: find direct CDN URL
+    side: client
+
+  # ── D ──────────────────────────────────────────────────────────────────────
+
+  - name: "Dark Doppelganger"
+    url: "https://www.curseforge.com/minecraft/mc-mods/dark-doppelganger"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Dark Window Bar"
+    url: "https://www.curseforge.com/minecraft/mc-mods/dark-window-bar"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Despawn Tweaks"
+    url: "https://www.curseforge.com/minecraft/mc-mods/despawn-tweaks"  # TODO: find direct CDN URL
     side: server
 
-  # Friends&FoesAddon — An addon for the Friends&Foes mod, adding one moobloom variant for each flower.
-  - name: "Friends&Foes Flowery Mooblooms"
-    url: "https://cdn.modrinth.com/data/ECOSu6pa/versions/h7kWOOOB/flowerymooblooms-fabric-3.0.2%2Bmc1.21.1.jar"
+  - name: "Difficult Spawners"
+    url: "https://www.curseforge.com/minecraft/mc-mods/difficult-spawners"  # TODO: find direct CDN URL
     side: both
 
-  # Add more mods below following the same pattern:
-  # - name: "Mod Name"
-  #   url: "https://cdn.modrinth.com/..."
-  #   side: both
+  - name: "Dimensional Sync Fixes"
+    url: "https://www.curseforge.com/minecraft/mc-mods/dimensional-sync-fixes"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Distraction Free Recipes"
+    url: "https://www.curseforge.com/minecraft/mc-mods/distraction-free-recipes"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Domum Ornamentum"
+    url: "https://mediafilez.forgecdn.net/files/8179/147/domum_ornamentum-1.20.1-1.0.301-snapshot-universal.jar"
+    side: both
+
+  - name: "Draconic Codex"
+    url: "https://www.curseforge.com/minecraft/mc-mods/draconic-codex-expansion-of-the-ancient-tome-from-quark"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Drippy Loading Screen"
+    url: "https://cdn.modrinth.com/data/v3CYg2V9/versions/4wF1Mfez/drippyloadingscreen_forge_3.1.2_MC_1.20.1.jar"
+    side: client
+
+  - name: "Dungeons Delight"
+    url: "https://www.curseforge.com/minecraft/mc-mods/dungeons-delight"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Dungeons Enhanced"
+    url: "https://cdn.modrinth.com/data/3IAJcJXa/versions/9SSVYA1L/dungeons_enhanced-1.20.1-5.4.3.jar"
+    side: both
+
+  # ── E ──────────────────────────────────────────────────────────────────────
+
+  - name: "Easy Anvils"
+    url: "https://www.curseforge.com/minecraft/mc-mods/easy-anvils"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "EEEAB's Mobs"
+    url: "https://www.curseforge.com/minecraft/mc-mods/eeeabs-mobs"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Elysium API"
+    url: "https://www.curseforge.com/minecraft/mc-mods/elysium-api"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Elytra Slot"
+    url: "https://cdn.modrinth.com/data/mSQF1NpT/versions/k6lA080t/elytraslot-forge-6.4.4%2B1.20.1.jar"
+    side: both
+
+  - name: "Embeddium"
+    url: "https://cdn.modrinth.com/data/sk9rgfiA/versions/UTbfe5d1/embeddium-0.3.31%2Bmc1.20.1.jar"
+    side: client
+
+  - name: "Embeddium (Rubidium) Extra"
+    url: "https://cdn.modrinth.com/data/oY2B1pjg/versions/F06DXCMX/rubidium-extra-0.5.4.4%2Bmc1.20.1-build.131.jar"
+    side: client
+
+  - name: "Ember's Underground Rooms"
+    url: "https://www.curseforge.com/minecraft/mc-mods/embers-underground-rooms"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Enchantment Descriptions"
+    url: "https://cdn.modrinth.com/data/UVtY3ZAC/versions/OPgBRfTQ/EnchantmentDescriptions-Forge-1.20.1-17.1.21.jar"
+    side: client
+
+  - name: "Ender's Delight"
+    url: "https://www.curseforge.com/minecraft/mc-mods/enders-delight"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Entity Culling"
+    url: "https://cdn.modrinth.com/data/NNAgCjsB/versions/qIt6NbdE/entityculling-forge-1.10.2-mc1.20.1.jar"
+    side: client
+
+  - name: "EpheroLib"
+    url: "https://www.curseforge.com/minecraft/mc-mods/epherolib"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Equipment Compare"
+    url: "https://www.curseforge.com/minecraft/mc-mods/equipment-compare"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Extra Bounties"
+    url: "https://www.curseforge.com/minecraft/mc-mods/extra-bounties"  # TODO: find direct CDN URL
+    side: both
+
+  # ── F ──────────────────────────────────────────────────────────────────────
+
+  - name: "Falling Leaves"
+    url: "https://cdn.modrinth.com/data/2JAUNCL4/versions/j5eND1ZA/fallingleaves-1.20.1-2.1.2.jar"
+    side: client
+
+  - name: "FamiliarsLib"
+    url: "https://www.curseforge.com/minecraft/mc-mods/familiarslib"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Fancy Hotbar"
+    url: "https://www.curseforge.com/minecraft/mc-mods/fancy-hotbar"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Fancy Toasts"
+    url: "https://www.curseforge.com/minecraft/mc-mods/fancy-toasts"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "FancyMenu"
+    url: "https://cdn.modrinth.com/data/Wq5SjeWM/versions/NWQbGlsX/fancymenu_forge_3.9.3_MC_1.20.1.jar"
+    side: client
+
+  - name: "Fantasy Armor"
+    url: "https://www.curseforge.com/minecraft/mc-mods/fantasy-armor"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Fantasy Weapons"
+    url: "https://www.curseforge.com/minecraft/mc-mods/fantasy-weapons-medieval-series"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Fantasy's Dice"
+    url: "https://www.curseforge.com/minecraft/mc-mods/fantasys-dice"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Fantasy's Furniture"
+    url: "https://www.curseforge.com/minecraft/mc-mods/fantasys-furniture"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Farmer's Delight"
+    url: "https://cdn.modrinth.com/data/R2OftAxM/versions/CsjS7EkP/FarmersDelight-1.20.1-1.3.2.jar"
+    side: both
+
+  - name: "Farmers Structures"
+    url: "https://www.curseforge.com/minecraft/mc-mods/farmers-structures"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Fast Async World Save"
+    url: "https://www.curseforge.com/minecraft/mc-mods/fast-async-world-save-forge-fabric"  # TODO: find direct CDN URL
+    side: server
+
+  - name: "Fast IP Ping"
+    url: "https://www.curseforge.com/minecraft/mc-mods/fast-ip-ping"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Fast Item Frames"
+    url: "https://www.curseforge.com/minecraft/mc-mods/fast-item-frames"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Fast Paintings"
+    url: "https://www.curseforge.com/minecraft/mc-mods/fast-paintings"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Feature Recycler"
+    url: "https://www.curseforge.com/minecraft/mc-mods/feature-recycler"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "FerriteCore"
+    url: "https://cdn.modrinth.com/data/uXXizFIs/versions/DG5Fn9Sz/ferritecore-6.0.1-forge.jar"
+    side: both
+
+  - name: "Feur - Dungeon Spawner"
+    url: "https://www.curseforge.com/minecraft/mc-mods/feur-dungeon-spawner"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Feur - Extension Desert"
+    url: "https://www.curseforge.com/minecraft/mc-mods/feur-extension-desert"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Feur - Extension Fossil"
+    url: "https://www.curseforge.com/minecraft/mc-mods/feur-extension-fossil"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Feur - Extension Jungle"
+    url: "https://www.curseforge.com/minecraft/mc-mods/feur-extension-jungle"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "fix GPU memory leak"
+    url: "https://www.curseforge.com/minecraft/mc-mods/fix-gpu-memory-leak"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Flerovium"
+    url: "https://www.curseforge.com/minecraft/mc-mods/flerovium"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Foolproof"
+    url: "https://www.curseforge.com/minecraft/mc-mods/foolproof"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Forge Config Screens"
+    url: "https://www.curseforge.com/minecraft/mc-mods/config-menus-forge"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Forgified Fabric API"
+    url: "https://cdn.modrinth.com/data/Aqlf1Shp/versions/XweDEycJ/fabric-api-0.92.6%2B1.11.14%2B1.20.1.jar"
+    side: both
+
+  - name: "Formations (Structure Library)"
+    url: "https://www.curseforge.com/minecraft/mc-mods/formations"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Formations Nether"
+    url: "https://www.curseforge.com/minecraft/mc-mods/formations-nether"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Formations Overworld"
+    url: "https://www.curseforge.com/minecraft/mc-mods/formations-overworld"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Fragmentum"
+    url: "https://www.curseforge.com/minecraft/mc-mods/fragmentum"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "FTB Chunks"
+    url: "https://mediafilez.forgecdn.net/files/8216/874/ftb-chunks-forge-2001.3.8.jar"
+    side: both
+
+  - name: "FTB Library"
+    url: "https://mediafilez.forgecdn.net/files/8226/927/ftb-library-forge-2001.2.13.jar"
+    side: both
+
+  - name: "FTB Quests"
+    url: "https://mediafilez.forgecdn.net/files/8078/538/ftb-quests-forge-2001.4.22.jar"
+    side: both
+
+  - name: "FTB Teams"
+    url: "https://mediafilez.forgecdn.net/files/7499/810/ftb-teams-forge-2001.3.2.jar"
+    side: both
+
+  - name: "FTB XMod Compat"
+    url: "https://www.curseforge.com/minecraft/mc-mods/ftb-xmod-compat"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "FullStack Watchdog"
+    url: "https://www.curseforge.com/minecraft/mc-mods/fullstack-watchdog"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Fzzy Config"
+    url: "https://www.curseforge.com/minecraft/mc-mods/fzzy-config"  # TODO: find direct CDN URL
+    side: both
+
+  # ── G ──────────────────────────────────────────────────────────────────────
+
+  - name: "Gallant Gauntlets"
+    url: "https://www.curseforge.com/minecraft/mc-mods/gauntlets"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Game Stages"
+    url: "https://cdn.modrinth.com/data/iAlZk5aS/versions/El97XbC9/GameStages-Forge-1.20.1-15.0.2.jar"
+    side: both
+
+  - name: "GeckoLib"
+    url: "https://cdn.modrinth.com/data/8BmcQJ2H/versions/HVdLnQMI/geckolib-forge-1.20.1-4.8.3.jar"
+    side: both
+
+  - name: "GlitchCore"
+    url: "https://www.curseforge.com/minecraft/mc-mods/glitchcore"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Gnetum"
+    url: "https://www.curseforge.com/minecraft/mc-mods/gnetum"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Goblin's Tyranny"
+    url: "https://cdn.modrinth.com/data/pR2fUOHY/versions/6VOpy769/goblins_tyranny-1.2.3-forge-1.20.1.jar"
+    side: both
+
+  - name: "Golem Overhaul"
+    url: "https://www.curseforge.com/minecraft/mc-mods/golem-overhaul"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "GTBC's Geomancy Plus"
+    url: "https://www.curseforge.com/minecraft/mc-mods/gtbcs-geomancy-plus"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "GTBC's SpellLib"
+    url: "https://www.curseforge.com/minecraft/mc-mods/gtbcs-spelllib"  # TODO: find direct CDN URL
+    side: both
+
+  # ── H ──────────────────────────────────────────────────────────────────────
+
+  - name: "Handcrafted"
+    url: "https://cdn.modrinth.com/data/pJmCFF0p/versions/N7wZwOFy/handcrafted-forge-1.20.1-3.0.6.jar"
+    side: both
+
+  - name: "Hardcore Revival"
+    url: "https://www.curseforge.com/minecraft/mc-mods/hardcore-revival"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Horseman"
+    url: "https://www.curseforge.com/minecraft/mc-mods/horseman"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "HT's TreeChop"
+    url: "https://www.curseforge.com/minecraft/mc-mods/treechop"  # TODO: find direct CDN URL
+    side: both
+
+  # ── I ──────────────────────────────────────────────────────────────────────
+
+  - name: "Ice And Fire Patcher"
+    url: "https://www.curseforge.com/minecraft/mc-mods/ice-and-fire-patcher"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Ice and Fire: Dragons"
+    url: "https://cdn.modrinth.com/data/LVnvHVBp/versions/EzN8KQYF/iceandfire-2.1.13-1.20.1-beta-5.jar"
+    side: both
+
+  - name: "Ice and Fire: Dragonseeker"
+    url: "https://www.curseforge.com/minecraft/mc-mods/ice-and-fire-dragonseeker"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Ice and Fire: Spellbooks"
+    url: "https://www.curseforge.com/minecraft/mc-mods/ice-and-fire-spellbooks"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Iceberg"
+    url: "https://cdn.modrinth.com/data/5faXoLqX/versions/BQ8rJPXV/Iceberg-1.20.1-forge-1.1.25.jar"
+    side: both
+
+  - name: "ImmediatelyFast"
+    url: "https://cdn.modrinth.com/data/5ZwdcRci/versions/OomXW3xp/ImmediatelyFast-Forge-1.5.4%2B1.20.4.jar"
+    side: client
+
+  - name: "Immersive Armor HUD"
+    url: "https://www.curseforge.com/minecraft/mc-mods/immersive-armor-hud"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Immersive Damage Indicators"
+    url: "https://www.curseforge.com/minecraft/mc-mods/immersive-damage-indicators"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Immersive Melodies"
+    url: "https://www.curseforge.com/minecraft/mc-mods/immersive-melodies"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Immersive Messages API"
+    url: "https://www.curseforge.com/minecraft/mc-mods/immersive-messages-api"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "In Control!"
+    url: "https://cdn.modrinth.com/data/KpICtuVx/versions/DyzZZhxQ/incontrol-1.20-9.4.6.jar"
+    side: server
+
+  - name: "Integrated API"
+    url: "https://www.curseforge.com/minecraft/mc-mods/integrated-api"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Integrated Cataclysm"
+    url: "https://www.curseforge.com/minecraft/mc-mods/integrated-cataclysm"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Integrated Dungeons and Structures"
+    url: "https://cdn.modrinth.com/data/Z8OZShAU/versions/mgwwWo3b/idas_forge-1.13.0%2B1.20.1.jar"
+    side: both
+
+  - name: "Integrated Dungeons Arise"
+    url: "https://www.curseforge.com/minecraft/mc-mods/integrated-dungeons-arise"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Integrated Seven Seas"
+    url: "https://www.curseforge.com/minecraft/mc-mods/integrated-seven-seas"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Integrated Stronghold"
+    url: "https://www.curseforge.com/minecraft/mc-mods/integrated-stronghold"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Integrated Villages"
+    url: "https://www.curseforge.com/minecraft/mc-mods/integrated-villages"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Iron's Spells 'n Spellbooks"
+    url: "https://cdn.modrinth.com/data/s4OWxYQQ/versions/6x6YEfIw/irons_spellbooks-1.20.1-3.16.0.jar"
+    side: both
+
+  # ── J ──────────────────────────────────────────────────────────────────────
+
+  - name: "Item Filters"
+    url: "https://www.curseforge.com/minecraft/mc-mods/item-filters"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Item Highlighter"
+    url: "https://www.curseforge.com/minecraft/mc-mods/item-highlighter"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Item Obliterator"
+    url: "https://www.curseforge.com/minecraft/mc-mods/item-obliterator"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "ItemPhysic Full"
+    url: "https://www.curseforge.com/minecraft/mc-mods/itemphysic"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Jade"
+    url: "https://cdn.modrinth.com/data/nvQzSEkH/versions/LecuGude/Jade-1.20.1-Forge-11.13.2.jar"
+    side: client
+
+  - name: "Jade Addons"
+    url: "https://cdn.modrinth.com/data/xuDOzCLy/versions/l9IrZYLt/JadeAddons-1.20.1-Forge-5.5.1.jar"
+    side: client
+
+  - name: "JadeColonies"
+    url: "https://www.curseforge.com/minecraft/mc-mods/jadecolonies"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Jaden's Nether Expansion"
+    url: "https://www.curseforge.com/minecraft/mc-mods/jadens-nether-expansion"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "JeremySeq's Damage Indicators"
+    url: "https://www.curseforge.com/minecraft/mc-mods/jeremyseq-damage-indicator"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "JourneyMap"
+    url: "https://cdn.modrinth.com/data/lfHFW1mp/versions/r7FWVNCs/journeymap-1.20.1-5.10.3-forge.jar"
+    side: client
+
+  - name: "JourneyMap Integration"
+    url: "https://www.curseforge.com/minecraft/mc-mods/journeymap-integration"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Just Enough Breeding (JEBr)"
+    url: "https://www.curseforge.com/minecraft/mc-mods/justenoughbreeding"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Just Enough Items (JEI)"
+    url: "https://cdn.modrinth.com/data/u6dRKJwZ/versions/RTFeXsvE/jei-1.20.1-forge-15.20.0.130.jar"
+    side: client
+
+  - name: "Just Enough Professions (JEP)"
+    url: "https://www.curseforge.com/minecraft/mc-mods/just-enough-professions-jep"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Just Leveling"
+    url: "https://www.curseforge.com/minecraft/mc-mods/justleveling-fork"  # TODO: find direct CDN URL
+    side: both
+
+  # ── K ──────────────────────────────────────────────────────────────────────
+
+  - name: "Kambrik"
+    url: "https://www.curseforge.com/minecraft/mc-mods/kambrik"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Kiwi"
+    url: "https://www.curseforge.com/minecraft/mc-mods/kiwi"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "KleeSlabs"
+    url: "https://cdn.modrinth.com/data/7uh75ruZ/versions/oEVhOfUM/kleeslabs-forge-1.20.1-15.0.12.jar"
+    side: both
+
+  - name: "Konkrete"
+    url: "https://www.curseforge.com/minecraft/mc-mods/konkrete"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Kotlin for Forge"
+    url: "https://cdn.modrinth.com/data/ordsPcFz/versions/Zsh14XeQ/kotlinforforge-4.12.0-all.jar"
+    side: both
+
+  # ── L ──────────────────────────────────────────────────────────────────────
+
+  - name: "L_Ender's Cataclysm"
+    url: "https://mediafilez.forgecdn.net/files/8193/609/L_Enders_Cataclysm-3.29.jar"
+    side: both
+
+  - name: "Leaves Be Gone"
+    url: "https://www.curseforge.com/minecraft/mc-mods/leaves-be-gone"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Legendary Monsters"
+    url: "https://www.curseforge.com/minecraft/mc-mods/legendary-monsters"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Legendary Survival Overhaul"
+    url: "https://www.curseforge.com/minecraft/mc-mods/legendary-survival-overhaul"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Lionfish API"
+    url: "https://www.curseforge.com/minecraft/mc-mods/lionfish-api"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Lithostitched"
+    url: "https://www.curseforge.com/minecraft/mc-mods/lithostitched"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Load My F***ing Tags"
+    url: "https://www.curseforge.com/minecraft/mc-mods/lmft"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Lodestone"
+    url: "https://www.curseforge.com/minecraft/mc-mods/lodestone"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Log Begone"
+    url: "https://www.curseforge.com/minecraft/mc-mods/log-begone"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Long NBT Killer"
+    url: "https://www.curseforge.com/minecraft/mc-mods/long-nbt-killer"  # TODO: find direct CDN URL
+    side: server
+
+  - name: "Loot Beams: Relooted!"
+    url: "https://www.curseforge.com/minecraft/mc-mods/loot-beams"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Loot Integrations"
+    url: "https://www.curseforge.com/minecraft/mc-mods/loot-integrations"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Loot Journal"
+    url: "https://www.curseforge.com/minecraft/mc-mods/loot-journal"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Luki's Grand Capitals"
+    url: "https://cdn.modrinth.com/data/8Lw09aLb/versions/RBwKCOh4/lukis-grand-capitals-1.1.3.jar"
+    side: both
+
+  - name: "Luna"
+    url: "https://www.curseforge.com/minecraft/mc-mods/luna"  # TODO: find direct CDN URL
+    side: both
+
+  # ── M ──────────────────────────────────────────────────────────────────────
+
+  - name: "Magic Circles - ISAS Addon"
+    url: "https://www.curseforge.com/minecraft/mc-mods/magic-circles-isas-addon"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "MapFrontiers"
+    url: "https://www.curseforge.com/minecraft/mc-mods/mapfrontiers"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Marium's Soulslike Weaponry"
+    url: "https://cdn.modrinth.com/data/oX6SohLj/versions/9uNei0P7/soulslike-weaponry-1.4.6-1.20.1-forge.jar"
+    side: both
+
+  - name: "Max Health Fix"
+    url: "https://www.curseforge.com/minecraft/mc-mods/max-health-fix"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Medieval Buildings"
+    url: "https://www.curseforge.com/minecraft/mc-mods/medieval-buildings"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Medieval Buildings [End Edition]"
+    url: "https://www.curseforge.com/minecraft/mc-mods/medieval-buildings-end-edition"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Medieval Buildings [Nether Edition]"
+    url: "https://www.curseforge.com/minecraft/mc-mods/medieval-buildings-nether-edition"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Melody"
+    url: "https://www.curseforge.com/minecraft/mc-mods/melody"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "MES - Moog's End Structures"
+    url: "https://www.curseforge.com/minecraft/mc-mods/moogs-end-structures"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "MidnightLib"
+    url: "https://www.curseforge.com/minecraft/mc-mods/midnightlib"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "MineColonies"
+    url: "https://mediafilez.forgecdn.net/files/8215/134/minecolonies-1.20.1-1.1.1239-snapshot.jar"
+    side: both
+
+  - name: "Miner's Delight +"
+    url: "https://www.curseforge.com/minecraft/mc-mods/miners-delight-plus"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Mining Speed Tooltips"
+    url: "https://www.curseforge.com/minecraft/mc-mods/mining-speed-tooltips"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "MmmMmmMmmMmm (Target Dummy)"
+    url: "https://www.curseforge.com/minecraft/mc-mods/mmmmmmmmmmmm"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "MNS - Moog's Nether Structures"
+    url: "https://www.curseforge.com/minecraft/mc-mods/mns-moogs-nether-structures"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "ModernFix"
+    url: "https://cdn.modrinth.com/data/nmDcB62a/versions/cEaTJM25/modernfix-forge-5.27.49%2Bmc1.20.1.jar"
+    side: both
+
+  - name: "Modpack Update Checker"
+    url: "https://www.curseforge.com/minecraft/mc-mods/modpack-update-checker"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Monobank"
+    url: "https://www.curseforge.com/minecraft/mc-mods/monobank"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Moog's Structure Lib"
+    url: "https://www.curseforge.com/minecraft/mc-mods/moogs-structure-lib"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Moonlight Lib"
+    url: "https://cdn.modrinth.com/data/twkfQtEc/versions/yvkoc7TA/moonlight-1.20-2.16.33-forge.jar"
+    side: both
+
+  - name: "More Villagers"
+    url: "https://www.curseforge.com/minecraft/mc-mods/more-villagers"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Mouse Tweaks"
+    url: "https://cdn.modrinth.com/data/aC3cM3Vq/versions/7JVXOe3K/MouseTweaks-forge-mc1.20.1-2.25.1.jar"
+    side: client
+
+  - name: "Mowzie's Mobs"
+    url: "https://cdn.modrinth.com/data/BFbX9xcm/versions/acYEfsJa/mowziesmobs-1.8.2.jar"
+    side: both
+
+  - name: "MVS - Moog's Voyager Structures"
+    url: "https://www.curseforge.com/minecraft/mc-mods/moogs-voyager-structures"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "My Nether's Delight"
+    url: "https://www.curseforge.com/minecraft/mc-mods/my-nethers-delight"  # TODO: find direct CDN URL
+    side: both
+
+  # ── N ──────────────────────────────────────────────────────────────────────
+
+  - name: "NaNny Reforked"
+    url: "https://www.curseforge.com/minecraft/mc-mods/nanny-reforked"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Nature's Compass"
+    url: "https://cdn.modrinth.com/data/fPetb5Kh/versions/eRSDvCjN/NaturesCompass-1.20.1-1.12.0-forge.jar"
+    side: client
+
+  - name: "Necronomicon API"
+    url: "https://www.curseforge.com/minecraft/mc-mods/necronomicon"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Neruina - Ticking Entity Fixer"
+    url: "https://cdn.modrinth.com/data/1s5x833P/versions/WYDoL9sH/neruina-3.3.2%2B1.20.1-forge.jar"
+    side: both
+
+  - name: "No Report Button"
+    url: "https://www.curseforge.com/minecraft/mc-mods/no-report-button"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Nordic Adventure"
+    url: "https://www.curseforge.com/minecraft/mc-mods/nordic-adventure"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Numismatic Bounties"
+    url: "https://www.curseforge.com/minecraft/mc-mods/numismatic-bounties"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Numismatic Overhaul"
+    url: "https://www.curseforge.com/minecraft/mc-mods/numismatic-overhaul"  # TODO: find direct CDN URL
+    side: both
+
+  # ── O ──────────────────────────────────────────────────────────────────────
+
+  - name: "Obscure API"
+    url: "https://www.curseforge.com/minecraft/mc-mods/obscure-api"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Oculus"
+    url: "https://cdn.modrinth.com/data/GchcoXML/versions/iQ1SwGc3/oculus-mc1.20.1-1.8.0.jar"
+    side: client
+
+  - name: "Oh The Biomes We've Gone"
+    url: "https://cdn.modrinth.com/data/NTi7d3Xc/versions/o5iLwahQ/Oh-The-Biomes-Weve-Gone-Forge-1.7.5.jar"
+    side: both
+
+  - name: "Oh The Trees You'll Grow"
+    url: "https://www.curseforge.com/minecraft/mc-mods/oh-the-trees-youll-grow"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Origins (Forge)"
+    url: "https://cdn.modrinth.com/data/jl3m2lR9/versions/vynFXywM/origins-forge-1.20.1-1.10.0.9-all.jar"
+    side: both
+
+  - name: "Otherworld - Apotheosis"
+    url: "https://www.curseforge.com/minecraft/mc-mods/otherworld-apotheosis"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Otherworld - Origins"
+    url: "https://www.curseforge.com/minecraft/mc-mods/otherworld-origins"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Otherworld Core"
+    url: "https://www.curseforge.com/minecraft/mc-mods/otherworld-core"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Overflowing Bars"
+    url: "https://cdn.modrinth.com/data/XD7XOrAF/versions/w90XIUWB/OverflowingBars-v8.0.1-1.20.1-Forge.jar"
+    side: client
+
+  # ── P ──────────────────────────────────────────────────────────────────────
+
+  - name: "P1nero's Dialogue Lib"
+    url: "https://www.curseforge.com/minecraft/mc-mods/p1neros-dialogue-lib"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Pack Analytics"
+    url: "https://www.curseforge.com/minecraft/mc-mods/pack-analytics"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Packet Fixer"
+    url: "https://www.curseforge.com/minecraft/mc-mods/packet-fixer"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Particle Core"
+    url: "https://www.curseforge.com/minecraft/mc-mods/particle-core"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Particle Effects Reforged"
+    url: "https://www.curseforge.com/minecraft/mc-mods/particle-effects-reforged"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Patchouli"
+    url: "https://cdn.modrinth.com/data/nU0bVIaL/versions/94dtOLgZ/Patchouli-1.20.1-85-FORGE.jar"
+    side: both
+
+  - name: "Paxi (Forge)"
+    url: "https://www.curseforge.com/minecraft/mc-mods/paxi"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Pehkui"
+    url: "https://cdn.modrinth.com/data/t5W7Jfwy/versions/SQpqSgAE/Pehkui-3.8.2%2B1.20.1-forge.jar"
+    side: both
+
+  - name: "Perception"
+    url: "https://www.curseforge.com/minecraft/mc-mods/perception"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Pillager Caravans"
+    url: "https://www.curseforge.com/minecraft/mc-mods/pillager-caravans"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Placebo"
+    url: "https://mediafilez.forgecdn.net/files/6274/231/Placebo-1.20.1-8.6.3.jar"
+    side: both
+
+  - name: "playerAnimator"
+    url: "https://cdn.modrinth.com/data/gedNE4y2/versions/xe2EVE6q/player-animation-lib-forge-1.0.2-rc1%2B1.20.jar"
+    side: both
+
+  - name: "Polymorph"
+    url: "https://cdn.modrinth.com/data/tagwiZkJ/versions/UZBKtFyR/polymorph-forge-0.49.10%2B1.20.1.jar"
+    side: both
+
+  - name: "Prism"
+    url: "https://cdn.modrinth.com/data/1OE8wbN0/versions/FFyss87M/Prism-1.20.1-forge-1.0.5.jar"
+    side: both
+
+  - name: "Projectile Damage Attribute"
+    url: "https://www.curseforge.com/minecraft/mc-mods/projectile-damage-attribute"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Puzzles Lib"
+    url: "https://cdn.modrinth.com/data/QAGBst4M/versions/mIyVGf3d/PuzzlesLib-v8.1.33-1.20.1-Forge.jar"
+    side: both
+
+  # ── Q ──────────────────────────────────────────────────────────────────────
+
+  - name: "Quark"
+    url: "https://cdn.modrinth.com/data/qnQsVE2z/versions/DijQLauD/Quark-4.0-462.jar"
+    side: both
+
+  - name: "Quests Kill Task Tweaks"
+    url: "https://www.curseforge.com/minecraft/mc-mods/quests-kill-task-tweaks"  # TODO: find direct CDN URL
+    side: both
+
+  # ── R ──────────────────────────────────────────────────────────────────────
+
+  - name: "Radium Reforged"
+    url: "https://www.curseforge.com/minecraft/mc-mods/radium-reforged"  # TODO: find direct CDN URL
+    side: server
+
+  - name: "Realm RPG: Fallen Adventurers"
+    url: "https://www.curseforge.com/minecraft/mc-mods/realm-rpg-fallen-adventurers"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Realm RPG: Imps & Demons"
+    url: "https://www.curseforge.com/minecraft/mc-mods/realm-rpg-imps-demons"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Realm RPG: Quests & Rewards"
+    url: "https://www.curseforge.com/minecraft/mc-mods/realm-rpg-quests-rewards"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Recipe Essentials"
+    url: "https://www.curseforge.com/minecraft/mc-mods/recipe-essentials-forge-fabric"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Redirected"
+    url: "https://www.curseforge.com/minecraft/mc-mods/redirected"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Regions Unexplored"
+    url: "https://cdn.modrinth.com/data/Tkikq67H/versions/XTrgsfIB/RegionsUnexploredForge-0.5.6%2B1.20.1.jar"
+    side: both
+
+  - name: "Reintegrated: Chipped"
+    url: "https://www.curseforge.com/minecraft/mc-mods/reintegrated-chipped"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Resource Pack Overrides"
+    url: "https://www.curseforge.com/minecraft/mc-mods/resource-pack-overrides"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Resourceful Config"
+    url: "https://cdn.modrinth.com/data/M1953qlQ/versions/DERs8u7v/resourcefulconfig-forge-1.20.1-2.1.3.jar"
+    side: both
+
+  - name: "Resourceful Lib"
+    url: "https://cdn.modrinth.com/data/G1hIVOrD/versions/OhsHaCcW/resourcefullib-forge-1.20.1-2.1.29.jar"
+    side: both
+
+  - name: "Rhino"
+    url: "https://cdn.modrinth.com/data/sk9knFPE/versions/uNALdylI/rhino-forge-2001.2.3-build.10.jar"
+    side: both
+
+  - name: "RunicLib"
+    url: "https://www.curseforge.com/minecraft/mc-mods/runiclib"  # TODO: find direct CDN URL
+    side: both
+
+  # ── S ──────────────────────────────────────────────────────────────────────
+
+  - name: "Sawmill"
+    url: "https://www.curseforge.com/minecraft/mc-mods/sawmill"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Scholar"
+    url: "https://www.curseforge.com/minecraft/mc-mods/scholar"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Searchables"
+    url: "https://cdn.modrinth.com/data/fuuu3xnx/versions/PM9yAW1G/Searchables-forge-1.20.1-1.0.3.jar"
+    side: client
+
+  - name: "Serene Seasons"
+    url: "https://cdn.modrinth.com/data/e0bNACJD/versions/YXTfAkOf/SereneSeasons-forge-1.20.1-9.1.0.2.jar"
+    side: both
+
+  - name: "Server Browser"
+    url: "https://www.curseforge.com/minecraft/mc-mods/server-browser"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Server Performance - Smooth Chunk Save"
+    url: "https://www.curseforge.com/minecraft/mc-mods/smooth-chunk-save"  # TODO: find direct CDN URL
+    side: server
+
+  - name: "ServerCore"
+    url: "https://www.curseforge.com/minecraft/mc-mods/servercore"  # TODO: find direct CDN URL
+    side: server
+
+  - name: "ShatterLib / OctoLib"
+    url: "https://www.curseforge.com/minecraft/mc-mods/shatterbyte-lib"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Shield Expansion"
+    url: "https://www.curseforge.com/minecraft/mc-mods/shield-expansion"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Shoulder Surfing Reloaded"
+    url: "https://cdn.modrinth.com/data/kepjj2sy/versions/TQk9rDdf/ShoulderSurfing-Forge-1.20.1-4.22.12.jar"
+    side: client
+
+  - name: "Shoulder Surfing: Iron's Spells Integration"
+    url: "https://www.curseforge.com/minecraft/mc-mods/shoulder-surfing-irons-spells-integration"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Simple Discord RPC"
+    url: "https://www.curseforge.com/minecraft/mc-mods/simple-discord-rpc"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Simple Snowy Fix"
+    url: "https://www.curseforge.com/minecraft/mc-mods/simple-snowy-fix-forge-fabric"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Sinytra Connector"
+    url: "https://cdn.modrinth.com/data/u58R1TMW/versions/dmW0aite/Connector-1.0.0-beta.48%2B1.20.1.jar"
+    side: both
+
+  - name: "Skeleton AI Fix"
+    url: "https://www.curseforge.com/minecraft/mc-mods/skeleton-ai-fix"  # TODO: find direct CDN URL
+    side: server
+
+  - name: "Skin Layers 3D"
+    url: "https://cdn.modrinth.com/data/zV5r3pPn/versions/egmtcJdf/skinlayers3d-forge-1.11.1-mc1.20.1.jar"
+    side: client
+
+  - name: "Smarter Farmers"
+    url: "https://www.curseforge.com/minecraft/mc-mods/smarter-farmers-farmers-replant"  # TODO: find direct CDN URL
+    side: server
+
+  - name: "Snow! Real Magic!"
+    url: "https://cdn.modrinth.com/data/iJNje1E8/versions/aQw97T9l/SnowRealMagic-1.20.1-Forge-10.7.0.jar"
+    side: both
+
+  - name: "Sophisticated Backpacks"
+    url: "https://cdn.modrinth.com/data/TyCTlI4b/versions/vu3Qrgx7/sophisticatedbackpacks-1.20.1-3.24.51.1864.jar"
+    side: both
+
+  - name: "Sophisticated Backpacks Create Integration"
+    url: "https://www.curseforge.com/minecraft/mc-mods/sophisticated-backpacks-create-integration"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Sophisticated Core"
+    url: "https://cdn.modrinth.com/data/nmoqTijg/versions/wh1PMpLf/sophisticatedcore-1.20.1-1.3.47.1995.jar"
+    side: both
+
+  - name: "Sophisticated Storage"
+    url: "https://cdn.modrinth.com/data/hMlaZH8f/versions/JP8KXfKK/sophisticatedstorage-1.20.1-1.4.54.1827.jar"
+    side: both
+
+  - name: "Sophisticated Storage Create Integration"
+    url: "https://www.curseforge.com/minecraft/mc-mods/sophisticated-storage-create-integration"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Soul fire'd"
+    url: "https://www.curseforge.com/minecraft/mc-mods/soul-fire-d"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Sound Physics Remastered"
+    url: "https://cdn.modrinth.com/data/qyVF9oeo/versions/x0sJ9PeR/sound-physics-remastered-forge-1.20.1-1.5.1.jar"
+    side: client
+
+  - name: "spark"
+    url: "https://cdn.modrinth.com/data/l6YH9Als/versions/4FXHDE9F/spark-1.10.53-forge.jar"
+    side: both
+
+  - name: "Sparse Structures"
+    url: "https://www.curseforge.com/minecraft/mc-mods/sparse-structures"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Spyglass Improvements: Zoom"
+    url: "https://www.curseforge.com/minecraft/mc-mods/spyglass-improvements"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Structure Essentials"
+    url: "https://www.curseforge.com/minecraft/mc-mods/structure-essentials-forge-fabric"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Structure Gel API"
+    url: "https://www.curseforge.com/minecraft/mc-mods/structure-gel-api"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Structure Layout Optimizer"
+    url: "https://www.curseforge.com/minecraft/mc-mods/structure-layout-optimizer"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Structurize"
+    url: "https://mediafilez.forgecdn.net/files/8138/301/structurize-1.20.1-1.0.816.jar"
+    side: both
+
+  - name: "Stylecolonies"
+    url: "https://www.curseforge.com/minecraft/mc-mods/stylecolonies"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Subtle Effects"
+    url: "https://www.curseforge.com/minecraft/mc-mods/subtle-effects"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Supplementaries"
+    url: "https://cdn.modrinth.com/data/fFEIiSDQ/versions/S0TIJ1hU/supplementaries-1.20-3.1.43-forge.jar"
+    side: both
+
+  # ── T ──────────────────────────────────────────────────────────────────────
+
+  - name: "T.O Magic 'n Extras - Iron's Spells Addon"
+    url: "https://www.curseforge.com/minecraft/mc-mods/to-tweaks-irons-spells"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "TACT - Tiny Alex's Caves Tweaks"
+    url: "https://www.curseforge.com/minecraft/mc-mods/tact"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Teams Friendly Fire Addon"
+    url: "https://www.curseforge.com/minecraft/mc-mods/teams-friendly-fire-addon"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Tectonic"
+    url: "https://cdn.modrinth.com/data/lWDHr9jE/versions/KLmvRxwh/tectonic-3.0.17-forge-1.20.1.jar"
+    side: both
+
+  - name: "TerraBlender"
+    url: "https://cdn.modrinth.com/data/kkmrDlKT/versions/zGconCHG/TerraBlender-forge-1.20.1-3.0.1.10.jar"
+    side: both
+
+  - name: "The Aether"
+    url: "https://www.curseforge.com/minecraft/mc-mods/the-aether"  # TODO: verify Forge 1.20.1 CDN URL
+    side: both
+
+  - name: "The Guild"
+    url: "https://www.curseforge.com/minecraft/mc-mods/guild"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "The Orcs!"
+    url: "https://www.curseforge.com/minecraft/mc-mods/the-orcs"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Thief"
+    url: "https://www.curseforge.com/minecraft/mc-mods/thief"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Tom's Simple Storage Mod"
+    url: "https://cdn.modrinth.com/data/XZNI4Cpy/versions/XELeoPjZ/toms_storage-1.20-1.7.1.jar"
+    side: both
+
+  - name: "Toni's Immersive Lanterns"
+    url: "https://www.curseforge.com/minecraft/mc-mods/immersive-lanterns"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Too Fast"
+    url: "https://www.curseforge.com/minecraft/mc-mods/too-fast"  # TODO: find direct CDN URL
+    side: server
+
+  - name: "TownTalk"
+    url: "https://www.curseforge.com/minecraft/mc-mods/towntalk"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Transmog"
+    url: "https://www.curseforge.com/minecraft/mc-mods/transmog"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Transparent"
+    url: "https://www.curseforge.com/minecraft/mc-mods/transparent"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Traveler's Titles"
+    url: "https://www.curseforge.com/minecraft/mc-mods/travelers-titles"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Tridot"
+    url: "https://www.curseforge.com/minecraft/mc-mods/tridot"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Tweaks addon for MineColonies"
+    url: "https://www.curseforge.com/minecraft/mc-mods/minecolonies-tweaks"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "TxniLib"
+    url: "https://www.curseforge.com/minecraft/mc-mods/txnilib"  # TODO: find direct CDN URL
+    side: both
+
+  # ── U / V ──────────────────────────────────────────────────────────────────
+
+  - name: "Valoria"
+    url: "https://www.curseforge.com/minecraft/mc-mods/valoria"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Vanillin"
+    url: "https://www.curseforge.com/minecraft/mc-mods/vanillin"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Villager Comfort Updated"
+    url: "https://www.curseforge.com/minecraft/mc-mods/villager-comfort-updated"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Villager Names"
+    url: "https://www.curseforge.com/minecraft/mc-mods/villager-names"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Vintage Animations"
+    url: "https://www.curseforge.com/minecraft/mc-mods/vintage-animations"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Visual Workbench"
+    url: "https://cdn.modrinth.com/data/kfqD1JRw/versions/qaWEHDC3/VisualWorkbench-v8.0.1-1.20.1-Forge.jar"
+    side: client
+
+  # ── W ──────────────────────────────────────────────────────────────────────
+
+  - name: "Wares"
+    url: "https://cdn.modrinth.com/data/Jz71ddli/versions/WHCeHSSI/wares-1.20.1-1.2.10.jar"
+    side: both
+
+  - name: "Waystones"
+    url: "https://cdn.modrinth.com/data/LOpKHB2A/versions/sKoHLGbK/waystones-forge-1.20.1-14.1.20.jar"
+    side: both
+
+  - name: "What Are They Up To (Watut)"
+    url: "https://www.curseforge.com/minecraft/mc-mods/what-are-they-up-to"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Wither Spawn Animation"
+    url: "https://www.curseforge.com/minecraft/mc-mods/wither-spawn-animation"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "Wither Spawn Fix W.S.A. Compatible"
+    url: "https://www.curseforge.com/minecraft/mc-mods/wither-spawn-fix-wsa-compatible"  # TODO: find direct CDN URL
+    side: both
+
+  # ── X / Y / Z ──────────────────────────────────────────────────────────────
+
+  - name: "Xenon"
+    url: "https://www.curseforge.com/minecraft/mc-mods/xenon"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "YDM's MobHealthBar"
+    url: "https://www.curseforge.com/minecraft/mc-mods/ydms-mobhealthbar-mod"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "YDM's Weapon Master"
+    url: "https://www.curseforge.com/minecraft/mc-mods/ydms-weapon-master"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "YetAnotherConfigLib"
+    url: "https://www.curseforge.com/minecraft/mc-mods/yacl"  # TODO: find direct CDN URL
+    side: both
+
+  - name: "You Shall Not Spawn!"
+    url: "https://www.curseforge.com/minecraft/mc-mods/you-shall-not-spawn"  # TODO: find direct CDN URL
+    side: server
+
+  - name: "YUNG's API"
+    url: "https://cdn.modrinth.com/data/Ua7DFN59/versions/PJOYAmAs/YungsApi-1.20-Forge-4.0.6.jar"
+    side: both
+
+  - name: "YUNG's Better Dungeons"
+    url: "https://cdn.modrinth.com/data/o1C1Dkj5/versions/kPiQ6v4q/YungsBetterDungeons-1.20-Forge-4.0.4.jar"
+    side: both
+
+  - name: "YUNG's Better End Island"
+    url: "https://cdn.modrinth.com/data/2BwBOmBQ/versions/Izqhg3Va/YungsBetterEndIsland-1.20-Forge-2.0.6.jar"
+    side: both
+
+  - name: "YUNG's Better Jungle Temples"
+    url: "https://cdn.modrinth.com/data/z9Ve58Ih/versions/CXQc6EnZ/YungsBetterJungleTemples-1.20-Forge-2.0.5.jar"
+    side: both
+
+  - name: "YUNG's Better Mineshafts"
+    url: "https://cdn.modrinth.com/data/HjmxVlSr/versions/kVO57zxB/YungsBetterMineshafts-1.20-Forge-4.0.4.jar"
+    side: both
+
+  - name: "YUNG's Better Nether Fortresses"
+    url: "https://cdn.modrinth.com/data/Z2mXHnxP/versions/2nUEz0zq/YungsBetterNetherFortresses-1.20-Forge-2.0.6.jar"
+    side: both
+
+  - name: "YUNG's Better Ocean Monuments"
+    url: "https://cdn.modrinth.com/data/3dT9sgt4/versions/SN4iZ7wf/YungsBetterOceanMonuments-1.20-Forge-3.0.4.jar"
+    side: both
+
+  - name: "YUNG's Better Strongholds"
+    url: "https://cdn.modrinth.com/data/kidLKymU/versions/rwiShgsc/YungsBetterStrongholds-1.20-Forge-4.0.3.jar"
+    side: both
+
+  - name: "YUNG's Bridges"
+    url: "https://cdn.modrinth.com/data/Ht4BfYp6/versions/KgO1gfM2/YungsBridges-1.20-Forge-4.0.3.jar"
+    side: both
+
+  - name: "YUNG's Cave Biomes"
+    url: "https://cdn.modrinth.com/data/cs7iGVq1/versions/UzIwhtOp/YungsCaveBiomes-1.20.1-Forge-2.0.5.jar"
+    side: both
+
+  - name: "YUNG's Menu Tweaks"
+    url: "https://www.curseforge.com/minecraft/mc-mods/yungs-menu-tweaks"  # TODO: find direct CDN URL
+    side: client
+
+  - name: "Zeta"
+    url: "https://cdn.modrinth.com/data/MVARlG2f/versions/mSER3jBI/Zeta-1.0-31.jar"
+    side: both

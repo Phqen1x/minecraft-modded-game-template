@@ -29,7 +29,7 @@ jobs:
 
   release:
     needs: set-version
-    uses: kenvandine/minecraft-server-snap/.github/workflows/reusable-pack-release.yml@main
+    uses: Phqen1x/minecraft-server-snap/.github/workflows/reusable-pack-release.yml@main
     with:
       # Path to your pack YAML — change if you renamed it
       config: pack.yaml

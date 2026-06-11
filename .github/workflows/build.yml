@@ -32,7 +32,7 @@ jobs:
 
   build:
     needs: set-version
-    uses: kenvandine/minecraft-server-snap/.github/workflows/reusable-pack-build.yml@main
+    uses: Phqen1x/minecraft-server-snap/.github/workflows/reusable-pack-build.yml@main
     with:
       config: pack.yaml
       version: ${{ needs.set-version.outputs.version }}
