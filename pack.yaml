@@ -114,7 +114,7 @@ mods:
     side: both
 
   - name: "Apothic Attributes"
-    url: "https://cdn.modrinth.com/data/9VZuZ8QO/versions/CmL4E5hQ/ApothicCombat-1.20.1-1.1.0.jar"
+    url: "https://mediafilez.forgecdn.net/files/5634/71/ApothicAttributes-1.20.1-1.3.7.jar"
     side: both
 
   - name: "AppleSkin"
@@ -343,11 +343,11 @@ mods:
 
   - name: "Colorwheel"
     url: "https://cdn.modrinth.com/data/BzHgFoGz/versions/eveWpY7P/colorwheel-forge-1.2.9%2Bmc1.20.1.jar"
-    side: both
+    side: client
 
   - name: "Colorwheel Patcher"
     url: "https://cdn.modrinth.com/data/KPsw5jDu/versions/REyG66M8/colorwheel_patcher-forge-1.0.5%2Bmc1.20.1.jar"
-    side: both
+    side: client
 
   - name: "Comforts"
     url: "https://cdn.modrinth.com/data/SaCpeal4/versions/gBDsc134/comforts-forge-6.4.0%2B1.20.1.jar"
@@ -506,6 +506,10 @@ mods:
     side: both
 
   - name: "EEEAB's Mobs"
+    url: "https://cdn.modrinth.com/data/N8MNCv66/versions/XzW8W75E/eeeabsmobs-1.20.1-0.98.1.jar"
+    side: both
+
+  - name: "EEEAB's Mobs: Boss Bars"
     url: "https://cdn.modrinth.com/data/SAaf5yvD/versions/piKsJFQR/eeeabsmobs_bossbars-1.0.1-forge-1.20.1.jar"
     side: both
 
@@ -833,6 +837,10 @@ mods:
     url: "https://cdn.modrinth.com/data/o1qh5qIF/versions/hoQg6GXe/integrated_villages-1.3.2%2B1.20.1-forge.jar"
     side: both
 
+  - name: "Iron's Lib"
+    url: "https://cdn.modrinth.com/data/9nfaJPtX/versions/FPYSRrdq/irons_lib-1.20.1-1.0.2.jar"
+    side: both
+
   - name: "Iron's Spells 'n Spellbooks"
     url: "https://cdn.modrinth.com/data/s4OWxYQQ/versions/6x6YEfIw/irons_spellbooks-1.20.1-3.16.0.jar"
     side: both
@@ -840,7 +848,7 @@ mods:
   # ── J ──────────────────────────────────────────────────────────────────────
 
   - name: "Item Filters"
-    url: "https://cdn.modrinth.com/data/1KLyhGRz/versions/FMUX4THT/item-filters-forge-2001.1.0-build.53.jar"
+    url: "https://mediafilez.forgecdn.net/files/4838/266/item-filters-forge-2001.1.0-build.59.jar"
     side: both
 
   - name: "Item Highlighter"
@@ -959,9 +967,9 @@ mods:
     url: "https://cdn.modrinth.com/data/9ON3zv6e/versions/HEJGfa5J/Log-Begone-Forge-1.20.1-1.0.8.jar"
     side: both
 
-  - name: "Long NBT Killer"
-    url: "https://cdn.modrinth.com/data/rWOcJQI6/versions/9YPdHp3H/LongNbtKiller-Forge-1.20.2-1.0.0.jar"
-    side: server
+  # - name: "Long NBT Killer"  # disabled: 1.20.2 jar requires javafml:48, incompatible with Forge 1.20.1 (javafml:47)
+  #   url: "https://cdn.modrinth.com/data/rWOcJQI6/versions/9YPdHp3H/LongNbtKiller-Forge-1.20.2-1.0.0.jar"
+  #   side: server
 
   - name: "Loot Beams: Relooted!"
     url: "https://cdn.modrinth.com/data/QWTmZu53/versions/Tj2fhhuD/lootbeams-1.20.1-1.2.2.jar"
@@ -1553,6 +1561,10 @@ mods:
 
   - name: "Wither Spawn Fix W.S.A. Compatible"
     url: "https://cdn.modrinth.com/data/vG6r2MHj/versions/esvCWBy2/wither_spawn_fix_wsa_compatible-1.1.0-forge-1.20.1.jar"
+    side: both
+
+  - name: "WunderLib"
+    url: "https://cdn.modrinth.com/data/5T56XRUO/versions/FFIJ4Ioj/WunderLib-20.0.1.jar"
     side: both
 
   # ── X / Y / Z ──────────────────────────────────────────────────────────────
