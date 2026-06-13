@@ -33,10 +33,6 @@ java_args: "-Xms4G -Xmx8G"
 mods:
   # ── A ──────────────────────────────────────────────────────────────────────
 
-  - name: "(ARCHIVE) Faster Random"
-    url: "https://cdn.modrinth.com/data/RfFxanNh/versions/Gb15BtGb/faster_random_forge-3.0.3.jar"
-    side: server
-
   - name: "[EMF] Entity Model Features"
     url: "https://cdn.modrinth.com/data/4I1XuqiY/versions/VSBDdOOY/entity_model_features-3.2.4-1.20.1-forge.jar"
     side: client
