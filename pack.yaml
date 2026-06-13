@@ -1223,10 +1223,6 @@ mods:
     url: "https://cdn.modrinth.com/data/1OE8wbN0/versions/FFyss87M/Prism-1.20.1-forge-1.0.5.jar"
     side: both
 
-  - name: "Projectile Damage Attribute"
-    url: "https://cdn.modrinth.com/data/AOyJhFvl/versions/Xk19d9L4/projectile_damage-forge-3.2.3%2B1.20.1.jar"
-    side: both
-
   - name: "Puzzles Lib"
     url: "https://cdn.modrinth.com/data/QAGBst4M/versions/mIyVGf3d/PuzzlesLib-v8.1.33-1.20.1-Forge.jar"
     side: both
