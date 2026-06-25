@@ -12,26 +12,28 @@ on:
         type: string
 
 jobs:
-  release:
+  set-version:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    outputs:
+      version: ${{ steps.version.outputs.version }}
     steps:
-      - uses: actions/checkout@v6
-
-      - name: Compute version
+      - name: Compute version from tag
         id: version
         run: |
           TAG="${{ github.ref_name != 'main' && github.ref_name || inputs.tag }}"
           VERSION=$(echo "$TAG" | sed 's/^v//')
           echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "Computed version: $VERSION"
 
-      - name: Create GitHub Release
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          gh release create "${{ steps.version.outputs.tag }}" \
-            --title "Create Aeronautics: Skybound ${{ steps.version.outputs.tag }}" \
-            --notes "Server pack release ${{ steps.version.outputs.tag }} (MC 1.21.1 / NeoForge 21.1.233)" \
-            --latest
+  release:
+    needs: set-version
+    uses: Phqen1x/minecraft-server-snap/.github/workflows/reusable-pack-release.yml@main
+    with:
+      config: pack.yaml
+      tag: ${{ github.ref_name != 'main' && github.ref_name || inputs.tag }}
+      version: ${{ needs.set-version.outputs.version }}
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      azure_client_id: ${{ secrets.AZURE_CLIENT_ID }}
+      server_ip: ${{ secrets.SERVER_IP }}
+      server_port: ${{ secrets.SERVER_PORT }}

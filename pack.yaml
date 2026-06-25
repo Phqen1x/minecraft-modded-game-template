@@ -1,0 +1,1094 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Pack configuration — Create Aeronautics: Skybound v5.2.1
+# Minecraft 1.21.1 + NeoForge 21.1.233
+# ─────────────────────────────────────────────────────────────────────────────
+
+name: "Create Aeronautics: Skybound"
+
+version: "0.0.0-devel"
+
+minecraft_version: "1.21.1"
+
+mod_loader: neoforge
+
+mod_loader_version: "21.1.233"
+
+background_color: "#0d1b2a"
+
+java_args: "-Xms4G -Xmx6G"
+
+mods:
+  - name: "[1.21.1] SecurityCraft v1.10.1"
+    path: mods/[1.21.1] SecurityCraft v1.10.1.jar
+    side: both
+  - name: "accents-neoforge-1.21.1-2.0.2"
+    path: mods/accents-neoforge-1.21.1-2.0.2.jar
+    side: both
+  - name: "accessories-neoforge-1.1.0-beta.53+1.21.1"
+    path: mods/accessories-neoforge-1.1.0-beta.53+1.21.1.jar
+    side: both
+  - name: "AdditionalEnchantedMiner-1.21.1-neoforge-21.1.153"
+    path: mods/AdditionalEnchantedMiner-1.21.1-neoforge-21.1.153.jar
+    side: both
+  - name: "addonslib-neoforge-1.21.1-1.13"
+    path: mods/addonslib-neoforge-1.21.1-1.13.jar
+    side: both
+  - name: "adorable_eggs-NeoForge-1.21.1-1.0.3"
+    path: mods/adorable_eggs-NeoForge-1.21.1-1.0.3.jar
+    side: both
+  - name: "advancednetherite-neoforge-2.3.1-1.21.1"
+    path: mods/advancednetherite-neoforge-2.3.1-1.21.1.jar
+    side: both
+  - name: "aeroclaims-0.9.0"
+    path: mods/aeroclaims-0.9.0.jar
+    side: both
+  - name: "aeronauticscovers-1.21.1-NeoForge-1.0.1"
+    path: mods/aeronauticscovers-1.21.1-NeoForge-1.0.1.jar
+    side: both
+  - name: "aeroworks-1.2.11"
+    path: mods/aeroworks-1.2.11.jar
+    side: both
+  - name: "aether-1.21.1-1.5.10-neoforge"
+    path: mods/aether-1.21.1-1.5.10-neoforge.jar
+    side: both
+  - name: "aetherial-islands-2.0.2"
+    path: mods/aetherial-islands-2.0.2.jar
+    side: both
+  - name: "aether_protect_your_moa-1.21.1-1.0.0-neoforge"
+    path: mods/aether_protect_your_moa-1.21.1-1.0.0-neoforge.jar
+    side: both
+  - name: "AetherVillages-1.21.1-1.0.8-neoforge"
+    path: mods/AetherVillages-1.21.1-1.0.8-neoforge.jar
+    side: both
+  - name: "AI-Improvements-1.21-0.5.3"
+    path: mods/AI-Improvements-1.21-0.5.3.jar
+    side: both
+  - name: "alltheleaks-1.1.9+1.21.1-neoforge"
+    path: mods/alltheleaks-1.1.9+1.21.1-neoforge.jar
+    side: both
+  - name: "alternate_current-mc1.21-1.9.0"
+    path: mods/alternate_current-mc1.21-1.9.0.jar
+    side: both
+  - name: "animal_armor_trims-neoforge-1.21.1-2.3.1"
+    path: mods/animal_armor_trims-neoforge-1.21.1-2.3.1.jar
+    side: both
+  - name: "anvilcore-10.1 Release-neoforge-1.21.1"
+    path: mods/anvilcore-10.1 Release-neoforge-1.21.1.jar
+    side: both
+  - name: "ApothicAttributes-1.21.1-2.9.1"
+    path: mods/ApothicAttributes-1.21.1-2.9.1.jar
+    side: both
+  - name: "appleskin-neoforge-mc1.21-3.0.9"
+    path: mods/appleskin-neoforge-mc1.21-3.0.9.jar
+    side: both
+  - name: "Aquaculture-1.21.1-2.7.21"
+    path: mods/Aquaculture-1.21.1-2.7.21.jar
+    side: both
+  - name: "architectury-13.0.8-neoforge"
+    path: mods/architectury-13.0.8-neoforge.jar
+    side: both
+  - name: "ArmorStatues-v21.1.0-1.21.1-NeoForge"
+    path: mods/ArmorStatues-v21.1.0-1.21.1-NeoForge.jar
+    side: both
+  - name: "ars_creo-1.21.1-5.4.0"
+    path: mods/ars_creo-1.21.1-5.4.0.jar
+    side: both
+  - name: "ars_nouveau-1.21.1-5.12.0"
+    path: mods/ars_nouveau-1.21.1-5.12.0.jar
+    side: both
+  - name: "ars_technica-1.21.1-2.7.6"
+    path: mods/ars_technica-1.21.1-2.7.6.jar
+    side: both
+  - name: "artifacts-neoforge-13.2.1"
+    path: mods/artifacts-neoforge-13.2.1.jar
+    side: both
+  - name: "attributefix-neoforge-1.21.1-21.1.3"
+    path: mods/attributefix-neoforge-1.21.1-21.1.3.jar
+    side: both
+  - name: "Audio Improvements v1.1 - NeoForge 1.21-1.21.3"
+    path: mods/Audio Improvements v1.1 - NeoForge 1.21-1.21.3.jar
+    side: both
+  - name: "automessage-merged-1.21.1-3.0.0"
+    path: mods/automessage-merged-1.21.1-3.0.0.jar
+    side: both
+  - name: "bagus_lib-1.21.1-13.25.1"
+    path: mods/bagus_lib-1.21.1-13.25.1.jar
+    side: both
+  - name: "balm-neoforge-1.21.1-21.0.59"
+    path: mods/balm-neoforge-1.21.1-21.0.59.jar
+    side: both
+  - name: "BarteringStation-v21.1.0-1.21.1-NeoForge"
+    path: mods/BarteringStation-v21.1.0-1.21.1-NeoForge.jar
+    side: both
+  - name: "beautify-neoforge-1.21.1-2.0.2"
+    path: mods/beautify-neoforge-1.21.1-2.0.2.jar
+    side: both
+  - name: "BEB-NeoForge-1.21-6.0.0"
+    path: mods/BEB-NeoForge-1.21-6.0.0.jar
+    side: both
+  - name: "betterarcheology-neoforge-1.21.1-1.3.4"
+    path: mods/betterarcheology-neoforge-1.21.1-1.3.4.jar
+    side: both
+  - name: "bettercombat-neoforge-2.3.2+1.21.1"
+    path: mods/bettercombat-neoforge-2.3.2+1.21.1.jar
+    side: both
+  - name: "Better-Crossbows-Neoforge-1.21.1-1.0.0"
+    path: mods/Better-Crossbows-Neoforge-1.21.1-1.0.0.jar
+    side: both
+  - name: "betterfpsdist-1.21-6.0"
+    path: mods/betterfpsdist-1.21-6.0.jar
+    side: both
+  - name: "betterpickaxetrims-neoforge-1.21.1-1.0.0"
+    path: mods/betterpickaxetrims-neoforge-1.21.1-1.0.0.jar
+    side: both
+  - name: "Better_Sword_Trims-Neoforge-1.21.1-1.0.0"
+    path: mods/Better_Sword_Trims-Neoforge-1.21.1-1.0.0.jar
+    side: both
+  - name: "betterworldloadingnf21-1.0"
+    path: mods/betterworldloadingnf21-1.0.jar
+    side: both
+  - name: "BHMenu-NeoForge-1.21-2.4.4"
+    path: mods/BHMenu-NeoForge-1.21-2.4.4.jar
+    side: both
+  - name: "biolith-neoforge-3.0.12"
+    path: mods/biolith-neoforge-3.0.12.jar
+    side: both
+  - name: "BiomesOPlenty-neoforge-1.21.1-21.1.0.14"
+    path: mods/BiomesOPlenty-neoforge-1.21.1-21.1.0.14.jar
+    side: both
+  - name: "block_factorys_bosses-2.1.2-neo-1.21.1"
+    path: mods/block_factorys_bosses-2.1.2-neo-1.21.1.jar
+    side: both
+  - name: "bookshelf-neoforge-1.21.1-21.1.81"
+    path: mods/bookshelf-neoforge-1.21.1-21.1.81.jar
+    side: both
+  - name: "bountiful-neoforge-8.0.0-beta.2"
+    path: mods/bountiful-neoforge-8.0.0-beta.2.jar
+    side: both
+  - name: "BTP-NeoForge-1.21.1-2.0.0"
+    path: mods/BTP-NeoForge-1.21.1-2.0.0.jar
+    side: both
+  - name: "cable_facades-1.21.1-NeoForge-2.1.3"
+    path: mods/cable_facades-1.21.1-NeoForge-2.1.3.jar
+    side: both
+  - name: "caelus-neoforge-7.0.1+1.21.1"
+    path: mods/caelus-neoforge-7.0.1+1.21.1.jar
+    side: both
+  - name: "CameraOverhaul-v2.1.1-neoforge+mc[1.21-1.21.1]"
+    path: mods/CameraOverhaul-v2.1.1-neoforge+mc[1.21-1.21.1].jar
+    side: both
+  - name: "camping-neoforge-1.21.1-2.1.4"
+    path: mods/camping-neoforge-1.21.1-2.1.4.jar
+    side: both
+  - name: "carryon-neoforge-1.21.1-2.2.4.4"
+    path: mods/carryon-neoforge-1.21.1-2.2.4.4.jar
+    side: both
+  - name: "CerbonsAPI-NeoForge-1.21-1.3.0"
+    path: mods/CerbonsAPI-NeoForge-1.21-1.3.0.jar
+    side: both
+  - name: "charginggadgets-1.14.1"
+    path: mods/charginggadgets-1.14.1.jar
+    side: both
+  - name: "charmofundying-neoforge-9.1.0+1.21.1"
+    path: mods/charmofundying-neoforge-9.1.0+1.21.1.jar
+    side: both
+  - name: "chineseflyingislandtower-1.1.0-neoforge-1.21.1"
+    path: mods/chineseflyingislandtower-1.1.0-neoforge-1.21.1.jar
+    side: both
+  - name: "chunksending-1.21-2.9"
+    path: mods/chunksending-1.21-2.9.jar
+    side: both
+  - name: "cleanswing-1.9"
+    path: mods/cleanswing-1.9.jar
+    side: both
+  - name: "clickadv-1.21-3.8"
+    path: mods/clickadv-1.21-3.8.jar
+    side: both
+  - name: "clientcrafting-1.21-2.1"
+    path: mods/clientcrafting-1.21-2.1.jar
+    side: both
+  - name: "ClimateRivers-v21.1.3-1.21.1-NeoForge"
+    path: mods/ClimateRivers-v21.1.3-1.21.1-NeoForge.jar
+    side: both
+  - name: "climbable_ropes-2.0.1"
+    path: mods/climbable_ropes-2.0.1.jar
+    side: both
+  - name: "cloth-config-15.0.140-neoforge"
+    path: mods/cloth-config-15.0.140-neoforge.jar
+    side: both
+  - name: "Clumps-neoforge-1.21.1-19.0.0.1"
+    path: mods/Clumps-neoforge-1.21.1-19.0.0.1.jar
+    side: both
+  - name: "Cognition-v2.4.12-1.21.1"
+    path: mods/Cognition-v2.4.12-1.21.1.jar
+    side: both
+  - name: "collective-1.21.1-8.29"
+    path: mods/collective-1.21.1-8.29.jar
+    side: both
+  - name: "colourfulearth-1.21-1.0.0-NeoForge"
+    path: mods/colourfulearth-1.21-1.0.0-NeoForge.jar
+    side: both
+  - name: "connectivity-1.21.1-7.6"
+    path: mods/connectivity-1.21.1-7.6.jar
+    side: both
+  - name: "cookingforblockheads-neoforge-1.21.1-21.1.23"
+    path: mods/cookingforblockheads-neoforge-1.21.1-21.1.23.jar
+    side: both
+  - name: "copycats-3.0.4+mc.1.21.1-neoforge"
+    path: mods/copycats-3.0.4+mc.1.21.1-neoforge.jar
+    side: both
+  - name: "coroutil-neoforge-1.21.0-1.3.9"
+    path: mods/coroutil-neoforge-1.21.0-1.3.9.jar
+    side: both
+  - name: "crabclaws-1.3.0-1.21.1+neoforge"
+    path: mods/crabclaws-1.3.0-1.21.1+neoforge.jar
+    side: both
+  - name: "crafting_on_a_stick-1.21.0.4"
+    path: mods/crafting_on_a_stick-1.21.0.4.jar
+    side: both
+  - name: "create-1.21.1-6.0.10"
+    path: mods/create-1.21.1-6.0.10.jar
+    side: both
+  - name: "createaddition-1.6.0"
+    path: mods/createaddition-1.6.0.jar
+    side: both
+  - name: "create_aeronautics_automated_logistics-0.4.2a"
+    path: mods/create_aeronautics_automated_logistics-0.4.2a.jar
+    side: both
+  - name: "create-aeronautics-bundled-1.21.1-1.2.1"
+    path: mods/create-aeronautics-bundled-1.21.1-1.2.1.jar
+    side: both
+  - name: "CreateAeronauticsCopycatWing-1.21.1-1.0.2"
+    path: mods/CreateAeronauticsCopycatWing-1.21.1-1.0.2.jar
+    side: both
+  - name: "create_aeronautics_throwable_rope_connector-0.3.0"
+    path: mods/create_aeronautics_throwable_rope_connector-0.3.0.jar
+    side: both
+  - name: "create_aeronautics_toolgun-0.2.0"
+    path: mods/create_aeronautics_toolgun-0.2.0.jar
+    side: both
+  - name: "create_aeronautics_transmission_linkage-0.2.3"
+    path: mods/create_aeronautics_transmission_linkage-0.2.3.jar
+    side: both
+  - name: "createbetterfps-1.21.1-1.1.4"
+    path: mods/createbetterfps-1.21.1-1.1.4.jar
+    side: both
+  - name: "createbigcannons-5.11.6+mc.1.21.1"
+    path: mods/createbigcannons-5.11.6+mc.1.21.1.jar
+    side: both
+  - name: "createdieselgenerators-1.21.1-1.3.14"
+    path: mods/createdieselgenerators-1.21.1-1.3.14.jar
+    side: both
+  - name: "CreateDragonsPlus-1.11.2b"
+    path: mods/CreateDragonsPlus-1.11.2b.jar
+    side: both
+  - name: "create-enchantment-industry-2.4.2"
+    path: mods/create-enchantment-industry-2.4.2.jar
+    side: both
+  - name: "create_hypertube-0.5.0-ALPHA-NEOFORGE"
+    path: mods/create_hypertube-0.5.0-ALPHA-NEOFORGE.jar
+    side: both
+  - name: "createoreexcavation-1.21-1.6.8"
+    path: mods/createoreexcavation-1.21-1.6.8.jar
+    side: both
+  - name: "create_power_loader-2.0.5-mc1.21.1"
+    path: mods/create_power_loader-2.0.5-mc1.21.1.jar
+    side: both
+  - name: "createpropulsion-1.1.4"
+    path: mods/createpropulsion-1.1.4.jar
+    side: both
+  - name: "create_sky_village-0.0.38 NeoForge 1.21.1"
+    path: mods/create_sky_village-0.0.38 NeoForge 1.21.1.jar
+    side: both
+  - name: "create_structures_arise-176.49.48 NeoForge 1.21.1"
+    path: mods/create_structures_arise-176.49.48 NeoForge 1.21.1.jar
+    side: both
+  - name: "create_submarine-2.1.6"
+    path: mods/create_submarine-2.1.6.jar
+    side: both
+  - name: "createthrusters-bundled-V0.1.16"
+    path: mods/createthrusters-bundled-V0.1.16.jar
+    side: both
+  - name: "creatingspace-1.21.1-1.7.19"
+    path: mods/creatingspace-1.21.1-1.7.19.jar
+    side: both
+  - name: "CreativeCore_NEOFORGE_v2.13.41_mc1.21.1"
+    path: mods/CreativeCore_NEOFORGE_v2.13.41_mc1.21.1.jar
+    side: both
+  - name: "CreeperOverhaul-neoforge-1.21.1-4.0.6"
+    path: mods/CreeperOverhaul-neoforge-1.21.1-4.0.6.jar
+    side: both
+  - name: "cristellib-neoforge-1.21.1-3.1.7"
+    path: mods/cristellib-neoforge-1.21.1-3.1.7.jar
+    side: both
+  - name: "crittersandcompanions-neoforge-1.21.1-2.3.4"
+    path: mods/crittersandcompanions-neoforge-1.21.1-2.3.4.jar
+    side: both
+  - name: "cupboard-1.21.1-3.8"
+    path: mods/cupboard-1.21.1-3.8.jar
+    side: both
+  - name: "curios-neoforge-9.5.1+1.21.1"
+    path: mods/curios-neoforge-9.5.1+1.21.1.jar
+    side: both
+  - name: "cyberspace 4.1.0 (NF1.21.1)"
+    path: mods/cyberspace 4.1.0 (NF1.21.1).jar
+    side: both
+  - name: "danger_close-neoforge-1.21.1-3.1.3"
+    path: mods/danger_close-neoforge-1.21.1-3.1.3.jar
+    side: both
+  - name: "darkerdepths-2.1.4"
+    path: mods/darkerdepths-2.1.4.jar
+    side: both
+  - name: "deep_aether-1.21.1-1.1.5.1"
+    path: mods/deep_aether-1.21.1-1.1.5.1.jar
+    side: both
+  - name: "deeperdarker-neoforge-1.21.1-1.4.1"
+    path: mods/deeperdarker-neoforge-1.21.1-1.4.1.jar
+    side: both
+  - name: "default_skill_trees-1.1"
+    path: mods/default_skill_trees-1.1.jar
+    side: both
+  - name: "DelightoFlight-1.21.1-1.3.4"
+    path: mods/DelightoFlight-1.21.1-1.3.4.jar
+    side: both
+  - name: "DiagonalFences-v21.1.1-1.21.1-NeoForge"
+    path: mods/DiagonalFences-v21.1.1-1.21.1-NeoForge.jar
+    side: both
+  - name: "DiagonalWalls-v21.1.2-1.21.1-NeoForge"
+    path: mods/DiagonalWalls-v21.1.2-1.21.1-NeoForge.jar
+    side: both
+  - name: "DiagonalWindows-v21.1.1-1.21.1-NeoForge"
+    path: mods/DiagonalWindows-v21.1.1-1.21.1-NeoForge.jar
+    side: both
+  - name: "disenchanting_table-merged-1.21.1-5.0.2"
+    path: mods/disenchanting_table-merged-1.21.1-5.0.2.jar
+    side: both
+  - name: "doubledoors-1.21.1-7.2"
+    path: mods/doubledoors-1.21.1-7.2.jar
+    side: both
+  - name: "dummmmmmy-1.21-2.0.12-neoforge"
+    path: mods/dummmmmmy-1.21-2.0.12-neoforge.jar
+    side: both
+  - name: "dyeable-components-1.0.3+mc1.21.1"
+    path: mods/dyeable-components-1.0.3+mc1.21.1.jar
+    side: both
+  - name: "EasyAnvils-v21.1.0-1.21.1-NeoForge"
+    path: mods/EasyAnvils-v21.1.0-1.21.1-NeoForge.jar
+    side: both
+  - name: "EasyShulkerBoxes-v21.1.3-1.21.1-NeoForge"
+    path: mods/EasyShulkerBoxes-v21.1.3-1.21.1-NeoForge.jar
+    side: both
+  - name: "eat_an_omelette-merged-1.21.1-1.5.0"
+    path: mods/eat_an_omelette-merged-1.21.1-1.5.0.jar
+    side: both
+  - name: "eatinganimation-1.21.0-6.0.1"
+    path: mods/eatinganimation-1.21.0-6.0.1.jar
+    side: both
+  - name: "ecologics-1.21.1-2.3.6"
+    path: mods/ecologics-1.21.1-2.3.6.jar
+    side: both
+  - name: "elementalmaces-neoforge-1.21-1.0.0"
+    path: mods/elementalmaces-neoforge-1.21-1.0.0.jar
+    side: both
+  - name: "ElysiumAPI-1.21.1-2.0.0-BETA.6"
+    path: mods/ElysiumAPI-1.21.1-2.0.0-BETA.6.jar
+    side: both
+  - name: "elytraslot-neoforge-9.0.2+1.21.1"
+    path: mods/elytraslot-neoforge-9.0.2+1.21.1.jar
+    side: both
+  - name: "elytratrims-neoforge-3.10.0+1.21.1"
+    path: mods/elytratrims-neoforge-3.10.0+1.21.1.jar
+    side: both
+  - name: "emotecraft-for-MC1.21.1-2.4.12-neoforge"
+    path: mods/emotecraft-for-MC1.21.1-2.4.12-neoforge.jar
+    side: both
+  - name: "enchdesc-neoforge-1.21.1-21.1.10"
+    path: mods/enchdesc-neoforge-1.21.1-21.1.10.jar
+    side: both
+  - name: "ender_pack-merged-1.21.1-2.2.0"
+    path: mods/ender_pack-merged-1.21.1-2.2.0.jar
+    side: both
+  - name: "endersdelight-1.3.0"
+    path: mods/endersdelight-1.3.0.jar
+    side: both
+  - name: "epicpowerbracelets-neoforge-1.21-1.1.1"
+    path: mods/epicpowerbracelets-neoforge-1.21-1.1.1.jar
+    side: both
+  - name: "escalated-1.3.1-mc.1.21.1"
+    path: mods/escalated-1.3.1-mc.1.21.1.jar
+    side: both
+  - name: "eternalstarlight-0.8.1+1.21.1+neoforge"
+    path: mods/eternalstarlight-0.8.1+1.21.1+neoforge.jar
+    side: both
+  - name: "EW-NeoForge-1.21.1-1.0.0"
+    path: mods/EW-NeoForge-1.21.1-1.0.0.jar
+    side: both
+  - name: "ExplorersCompass-1.21.1-3.4.0-neoforge"
+    path: mods/ExplorersCompass-1.21.1-3.4.0-neoforge.jar
+    side: both
+  - name: "explore_ruins_aether-1.0.0-neoforge-1.21.1"
+    path: mods/explore_ruins_aether-1.0.0-neoforge-1.21.1.jar
+    side: both
+  - name: "Explorify v1.6.5.mod"
+    path: mods/Explorify v1.6.5.mod.jar
+    side: both
+  - name: "exposure-neoforge-1.21.1-1.9.18"
+    path: mods/exposure-neoforge-1.21.1-1.9.18.jar
+    side: both
+  - name: "FarmersDelight-1.21.1-1.3.2"
+    path: mods/FarmersDelight-1.21.1-1.3.2.jar
+    side: both
+  - name: "FarmersStructures-1.0.6-1.21.1_neoforge"
+    path: mods/FarmersStructures-1.0.6-1.21.1_neoforge.jar
+    side: both
+  - name: "fastasyncworldsave-1.21-2.6"
+    path: mods/fastasyncworldsave-1.21-2.6.jar
+    side: both
+  - name: "ferritecore-7.0.3-neoforge"
+    path: mods/ferritecore-7.0.3-neoforge.jar
+    side: both
+  - name: "FHG-NeoForge-1.21.1-1.0.0"
+    path: mods/FHG-NeoForge-1.21.1-1.0.0.jar
+    side: both
+  - name: "FluxNetworks-1.21.1-8.0.0"
+    path: mods/FluxNetworks-1.21.1-8.0.0.jar
+    side: both
+  - name: "ForgeConfigAPIPort-v21.1.6-1.21.1-NeoForge"
+    path: mods/ForgeConfigAPIPort-v21.1.6-1.21.1-NeoForge.jar
+    side: both
+  - name: "fragmentum-neoforge-1.21.1-2.2.4"
+    path: mods/fragmentum-neoforge-1.21.1-2.2.4.jar
+    side: both
+  - name: "framework-neoforge-1.21.1-0.13.11"
+    path: mods/framework-neoforge-1.21.1-0.13.11.jar
+    side: both
+  - name: "ftb-library-neoforge-2101.1.32"
+    path: mods/ftb-library-neoforge-2101.1.32.jar
+    side: both
+  - name: "ftb-quests-neoforge-2101.1.27"
+    path: mods/ftb-quests-neoforge-2101.1.27.jar
+    side: both
+  - name: "ftb-teams-neoforge-2101.1.10"
+    path: mods/ftb-teams-neoforge-2101.1.10.jar
+    side: both
+  - name: "fzzy_config-0.7.6+1.21+neoforge"
+    path: mods/fzzy_config-0.7.6+1.21+neoforge.jar
+    side: both
+  - name: "GatewaysToEternity-1.21.1-5.1.0"
+    path: mods/GatewaysToEternity-1.21.1-5.1.0.jar
+    side: both
+  - name: "geckolib-neoforge-1.21.1-4.9.1"
+    path: mods/geckolib-neoforge-1.21.1-4.9.1.jar
+    side: both
+  - name: "GeophilicBackported-v1.3.3 1.21.1"
+    path: mods/GeophilicBackported-v1.3.3 1.21.1.jar
+    side: both
+  - name: "Geophilic v3.6.mod"
+    path: mods/Geophilic v3.6.mod.jar
+    side: both
+  - name: "georges_flying_island-1.0.1-neoforge-1.21.1"
+    path: mods/georges_flying_island-1.0.1-neoforge-1.21.1.jar
+    side: both
+  - name: "GlitchCore-neoforge-1.21.1-2.1.0.2"
+    path: mods/GlitchCore-neoforge-1.21.1-2.1.0.2.jar
+    side: both
+  - name: "gml-6.0.2"
+    path: mods/gml-6.0.2.jar
+    side: both
+  - name: "goblintraders-neoforge-1.21.1-1.11.2"
+    path: mods/goblintraders-neoforge-1.21.1-1.11.2.jar
+    side: both
+  - name: "golden_foods-merged-1.21.1-2.4.0"
+    path: mods/golden_foods-merged-1.21.1-2.4.0.jar
+    side: both
+  - name: "golemoverhaul-neoforge-1.21.1-1.1.0"
+    path: mods/golemoverhaul-neoforge-1.21.1-1.1.0.jar
+    side: both
+  - name: "guideme-21.1.16"
+    path: mods/guideme-21.1.16.jar
+    side: both
+  - name: "happy_ghasts_boost-merged-1.21.1-1.0.1"
+    path: mods/happy_ghasts_boost-merged-1.21.1-1.0.1.jar
+    side: both
+  - name: "healthy_water-merged-1.21.1-1.0.1"
+    path: mods/healthy_water-merged-1.21.1-1.0.1.jar
+    side: both
+  - name: "Highlighter-1.21-neoforge-1.1.11"
+    path: mods/Highlighter-1.21-neoforge-1.1.11.jar
+    side: both
+  - name: "hunters_return-1.21.1-20.9.0"
+    path: mods/hunters_return-1.21.1-20.9.0.jar
+    side: both
+  - name: "Iceberg-1.21.1-neoforge-1.3.2"
+    path: mods/Iceberg-1.21.1-neoforge-1.3.2.jar
+    side: both
+  - name: "IllagerInvasion-v21.1.6-1.21.1-NeoForge"
+    path: mods/IllagerInvasion-v21.1.6-1.21.1-NeoForge.jar
+    side: both
+  - name: "immersive_furniture-neoforge-0.2.2+1.21.1"
+    path: mods/immersive_furniture-neoforge-0.2.2+1.21.1.jar
+    side: both
+  - name: "immersive_melodies-neoforge-0.6.4+1.21.1"
+    path: mods/immersive_melodies-neoforge-0.6.4+1.21.1.jar
+    side: both
+  - name: "improved-village-placement-1.1.2"
+    path: mods/improved-village-placement-1.1.2.jar
+    side: both
+  - name: "interiors-1.21.1-neoforge-0.6.1"
+    path: mods/interiors-1.21.1-neoforge-0.6.1.jar
+    side: both
+  - name: "inventoryessentials-neoforge-1.21.1-21.1.16"
+    path: mods/inventoryessentials-neoforge-1.21.1-21.1.16.jar
+    side: both
+  - name: "ItemPhysic_NEOFORGE_v1.8.13_mc1.21.1"
+    path: mods/ItemPhysic_NEOFORGE_v1.8.13_mc1.21.1.jar
+    side: both
+  - name: "Jade-1.21.1-NeoForge-15.10.5"
+    path: mods/Jade-1.21.1-NeoForge-15.10.5.jar
+    side: both
+  - name: "jamlib-neoforge-1.3.6+1.21.1"
+    path: mods/jamlib-neoforge-1.3.6+1.21.1.jar
+    side: both
+  - name: "jearchaeology-1.21.1-1.2.0"
+    path: mods/jearchaeology-1.21.1-1.2.0.jar
+    side: both
+  - name: "jei-1.21.1-neoforge-19.27.0.336"
+    path: mods/jei-1.21.1-neoforge-19.27.0.336.jar
+    side: both
+  - name: "jmi-neoforge-1.21.1-1.9"
+    path: mods/jmi-neoforge-1.21.1-1.9.jar
+    side: both
+  - name: "journeymap-neoforge-1.21.1-6.0.0-beta.88"
+    path: mods/journeymap-neoforge-1.21.1-6.0.0-beta.88.jar
+    side: both
+  - name: "justenoughbreeding-neoforge-1.21.1-3.1.0"
+    path: mods/justenoughbreeding-neoforge-1.21.1-3.1.0.jar
+    side: both
+  - name: "just-hammers-neoforge-21.1.4"
+    path: mods/just-hammers-neoforge-21.1.4.jar
+    side: both
+  - name: "kambrik-neoforge-8.0.0-beta.2"
+    path: mods/kambrik-neoforge-8.0.0-beta.2.jar
+    side: both
+  - name: "KineticGrip-1.21.1-1.0.4"
+    path: mods/KineticGrip-1.21.1-1.0.4.jar
+    side: both
+  - name: "kleeslabs-neoforge-1.21.1-21.1.11"
+    path: mods/kleeslabs-neoforge-1.21.1-21.1.11.jar
+    side: both
+  - name: "Kobolds-4.0.1"
+    path: mods/Kobolds-4.0.1.jar
+    side: both
+  - name: "konkrete_neoforge_1.9.9_MC_1.21"
+    path: mods/konkrete_neoforge_1.9.9_MC_1.21.jar
+    side: both
+  - name: "kotlinforforge-5.11.0-all"
+    path: mods/kotlinforforge-5.11.0-all.jar
+    side: both
+  - name: "kubejs-neoforge-2101.7.2-build.368"
+    path: mods/kubejs-neoforge-2101.7.2-build.368.jar
+    side: both
+  - name: "lambdynamiclights-4.8.10+1.21.1"
+    path: mods/lambdynamiclights-4.8.10+1.21.1.jar
+    side: both
+  - name: "letsdo-beachparty-neoforge-2.1.4"
+    path: mods/letsdo-beachparty-neoforge-2.1.4.jar
+    side: both
+  - name: "letsdo-vinery-neoforge-1.5.3"
+    path: mods/letsdo-vinery-neoforge-1.5.3.jar
+    side: both
+  - name: "letsdo-wildernature-neoforge-1.1.3"
+    path: mods/letsdo-wildernature-neoforge-1.1.3.jar
+    side: both
+  - name: "limitedchunks-1.21-4.1"
+    path: mods/limitedchunks-1.21-4.1.jar
+    side: both
+  - name: "lithium-neoforge-0.15.3+mc1.21.1"
+    path: mods/lithium-neoforge-0.15.3+mc1.21.1.jar
+    side: both
+  - name: "lithostitched-1.7.11-neoforge-21.1"
+    path: mods/lithostitched-1.7.11-neoforge-21.1.jar
+    side: both
+  - name: "loadingbackgrounds-2.0.0-neoforge-1.20.2_to_1.21.1"
+    path: mods/loadingbackgrounds-2.0.0-neoforge-1.20.2_to_1.21.1.jar
+    side: both
+  - name: "longer_following_time-merged-1.21.1-1.1.0"
+    path: mods/longer_following_time-merged-1.21.1-1.1.0.jar
+    side: both
+  - name: "lootintegrations-1.21.1-4.7"
+    path: mods/lootintegrations-1.21.1-4.7.jar
+    side: both
+  - name: "lootr-neoforge-1.21.1-1.11.37.120"
+    path: mods/lootr-neoforge-1.21.1-1.11.37.120.jar
+    side: both
+  - name: "mcwbiomesoplenty-neoforge-1.21.1-1.6"
+    path: mods/mcwbiomesoplenty-neoforge-1.21.1-1.6.jar
+    side: both
+  - name: "mcw-bridges-3.1.2-mc1.21.1neoforge"
+    path: mods/mcw-bridges-3.1.2-mc1.21.1neoforge.jar
+    side: both
+  - name: "mcw-doors-1.1.5-mc1.21.1neoforge"
+    path: mods/mcw-doors-1.1.5-mc1.21.1neoforge.jar
+    side: both
+  - name: "mcw-furniture-3.4.1-mc1.21.1neoforge"
+    path: mods/mcw-furniture-3.4.1-mc1.21.1neoforge.jar
+    side: both
+  - name: "mcw-holidays-1.1.2-mc1.21.1neoforge"
+    path: mods/mcw-holidays-1.1.2-mc1.21.1neoforge.jar
+    side: both
+  - name: "mcw-lights-1.1.5-mc1.21.1neoforge"
+    path: mods/mcw-lights-1.1.5-mc1.21.1neoforge.jar
+    side: both
+  - name: "mcw-mcwfences-1.2.1-mc1.21.1neoforge"
+    path: mods/mcw-mcwfences-1.2.1-mc1.21.1neoforge.jar
+    side: both
+  - name: "mcw-mcwpaths-1.1.1-mc1.21.1neoforge"
+    path: mods/mcw-mcwpaths-1.1.1-mc1.21.1neoforge.jar
+    side: both
+  - name: "mcw-mcwstairs-1.0.2-mc1.21.1neoforge"
+    path: mods/mcw-mcwstairs-1.0.2-mc1.21.1neoforge.jar
+    side: both
+  - name: "mcw-mcwwindows-2.4.2-mc1.21.1neoforge"
+    path: mods/mcw-mcwwindows-2.4.2-mc1.21.1neoforge.jar
+    side: both
+  - name: "mcw-paintings-1.1.0-mc1.21.1neoforge"
+    path: mods/mcw-paintings-1.1.0-mc1.21.1neoforge.jar
+    side: both
+  - name: "mcw-roofs-2.3.2-mc1.21.1neoforge"
+    path: mods/mcw-roofs-2.3.2-mc1.21.1neoforge.jar
+    side: both
+  - name: "mcw-trapdoors-1.1.5-mc1.21.1neoforge"
+    path: mods/mcw-trapdoors-1.1.5-mc1.21.1neoforge.jar
+    side: both
+  - name: "Measurements-neoforge-1.21.1-3.0.3"
+    path: mods/Measurements-neoforge-1.21.1-3.0.3.jar
+    side: both
+  - name: "medieval_buildings-1.21.1-1.1.1-neoforge"
+    path: mods/medieval_buildings-1.21.1-1.1.1-neoforge.jar
+    side: both
+  - name: "medieval_buildings_end_edition-1.21.1-1.0.4-neoforge"
+    path: mods/medieval_buildings_end_edition-1.21.1-1.0.4-neoforge.jar
+    side: both
+  - name: "medieval_buildings_nether_edition-1.21.1-1.0.2-neoforge"
+    path: mods/medieval_buildings_nether_edition-1.21.1-1.0.2-neoforge.jar
+    side: both
+  - name: "melody_neoforge_1.0.10_MC_1.21"
+    path: mods/melody_neoforge_1.0.10_MC_1.21.jar
+    side: both
+  - name: "memorysettings-1.21-6.0"
+    path: mods/memorysettings-1.21-6.0.jar
+    side: both
+  - name: "midnightlib-neoforge-1.9.3+1.21.1"
+    path: mods/midnightlib-neoforge-1.9.3+1.21.1.jar
+    side: both
+  - name: "modelfix-1.21-1.10"
+    path: mods/modelfix-1.21-1.10.jar
+    side: both
+  - name: "Modern-Dynamics-0.9.6"
+    path: mods/Modern-Dynamics-0.9.6.jar
+    side: both
+  - name: "modernfix-neoforge-5.27.14+mc1.21.1"
+    path: mods/modernfix-neoforge-5.27.14+mc1.21.1.jar
+    side: both
+  - name: "Modern-Industrialization-2.4.3"
+    path: mods/Modern-Industrialization-2.4.3.jar
+    side: both
+  - name: "monolib-neoforge-1.21.1-4.0.2"
+    path: mods/monolib-neoforge-1.21.1-4.0.2.jar
+    side: both
+  - name: "MoogsEndStructures-1.21-2.0.3"
+    path: mods/MoogsEndStructures-1.21-2.0.3.jar
+    side: both
+  - name: "MoogsSoaringStructures-1.21-2.1.2"
+    path: mods/MoogsSoaringStructures-1.21-2.1.2.jar
+    side: both
+  - name: "moogs_structures-neoforge-1.21.1-3.0.0"
+    path: mods/moogs_structures-neoforge-1.21.1-3.0.0.jar
+    side: both
+  - name: "MoogsVoyagerStructures-1.21-5.0.11"
+    path: mods/MoogsVoyagerStructures-1.21-5.0.11.jar
+    side: both
+  - name: "moonlight-neoforge-1.21.1-3.0.19"
+    path: mods/moonlight-neoforge-1.21.1-3.0.19.jar
+    side: both
+  - name: "more_beautiful_torches-merged-1.21-3.0.0"
+    path: mods/more_beautiful_torches-merged-1.21-3.0.0.jar
+    side: both
+  - name: "more_bows_and_arrows-merged-1.21.1-5.0.4"
+    path: mods/more_bows_and_arrows-merged-1.21.1-5.0.4.jar
+    side: both
+  - name: "more_useful_copper-merged-1.21.1-3.0.0"
+    path: mods/more_useful_copper-merged-1.21.1-3.0.0.jar
+    side: both
+  - name: "MossyLib-1.5.0+1.21.1+neoforge"
+    path: mods/MossyLib-1.5.0+1.21.1+neoforge.jar
+    side: both
+  - name: "mowziesmobs-1.21.1-1.8.2"
+    path: mods/mowziesmobs-1.21.1-1.8.2.jar
+    side: both
+  - name: "MultiArrowEffects-Neoforge-1.21.1-1.0.0"
+    path: mods/MultiArrowEffects-Neoforge-1.21.1-1.0.0.jar
+    side: both
+  - name: "MutantMonsters-v21.1.1-1.21.1-NeoForge"
+    path: mods/MutantMonsters-v21.1.1-1.21.1-NeoForge.jar
+    side: both
+  - name: "MyNethersDelight-1.21.1-1.10.2"
+    path: mods/MyNethersDelight-1.21.1-1.10.2.jar
+    side: both
+  - name: "naturalist-1.0.2-neoforge-1.21.1"
+    path: mods/naturalist-1.0.2-neoforge-1.21.1.jar
+    side: both
+  - name: "NaturesCompass-1.21.1-3.4.0-neoforge"
+    path: mods/NaturesCompass-1.21.1-3.4.0-neoforge.jar
+    side: both
+  - name: "Neoforge-Aeronautics-Calibrated-1.2.2"
+    path: mods/Neoforge-Aeronautics-Calibrated-1.2.2.jar
+    side: both
+  - name: "[NeoForge] Armadillo Scute Armor - MC 1.21 - 1.0.2"
+    path: mods/[NeoForge] Armadillo Scute Armor - MC 1.21 - 1.0.2.jar
+    side: both
+  - name: "neo_startinv-1.0.0-1.21"
+    path: mods/neo_startinv-1.0.0-1.21.jar
+    side: both
+  - name: "NetherChested-v21.1.1-1.21.1-NeoForge"
+    path: mods/NetherChested-v21.1.1-1.21.1-NeoForge.jar
+    side: both
+  - name: "netherportalfix-neoforge-1.21.1-21.1.1"
+    path: mods/netherportalfix-neoforge-1.21.1-21.1.1.jar
+    side: both
+  - name: "new_slab_variants-merged-1.21.1-3.0.1"
+    path: mods/new_slab_variants-merged-1.21.1-3.0.1.jar
+    side: both
+  - name: "NoChatReports-NEOFORGE-1.21.1-v2.9.1"
+    path: mods/NoChatReports-NEOFORGE-1.21.1-v2.9.1.jar
+    side: both
+  - name: "nyfsspiders-neoforge-1.21.1-3.0.1"
+    path: mods/nyfsspiders-neoforge-1.21.1-3.0.1.jar
+    side: both
+  - name: "OctoLib-NEOFORGE-0.6.2+1.21"
+    path: mods/OctoLib-NEOFORGE-0.6.2+1.21.jar
+    side: both
+  - name: "open-parties-and-claims-neoforge-1.21.1-0.27.5"
+    path: mods/open-parties-and-claims-neoforge-1.21.1-0.27.5.jar
+    side: both
+  - name: "owo-lib-neoforge-0.12.15.5-beta.1+1.21"
+    path: mods/owo-lib-neoforge-0.12.15.5-beta.1+1.21.jar
+    side: both
+  - name: "pandalib-neoforge-1.21.1-0.6.0"
+    path: mods/pandalib-neoforge-1.21.1-0.6.0.jar
+    side: both
+  - name: "Paraglider-neoforge-21.1.5"
+    path: mods/Paraglider-neoforge-21.1.5.jar
+    side: both
+  - name: "particular-1.21.1-NeoForge-1.5.5"
+    path: mods/particular-1.21.1-NeoForge-1.5.5.jar
+    side: both
+  - name: "Ping-Wheel-1.12.2-neoforge-1.21.1"
+    path: mods/Ping-Wheel-1.12.2-neoforge-1.21.1.jar
+    side: both
+  - name: "Placebo-1.21.1-9.9.1"
+    path: mods/Placebo-1.21.1-9.9.1.jar
+    side: both
+  - name: "Platform-neoforge-1.21.1-1.3.3"
+    path: mods/Platform-neoforge-1.21.1-1.3.3.jar
+    side: both
+  - name: "player-animation-lib-forge-2.0.4+1.21.1"
+    path: mods/player-animation-lib-forge-2.0.4+1.21.1.jar
+    side: both
+  - name: "PlayerRevive_NEOFORGE_v2.1.2_mc1.21.1"
+    path: mods/PlayerRevive_NEOFORGE_v2.1.2_mc1.21.1.jar
+    side: both
+  - name: "polymorph-neoforge-1.1.0+1.21.1"
+    path: mods/polymorph-neoforge-1.1.0+1.21.1.jar
+    side: both
+  - name: "portable_engine_liquid_fuel-2.0.0-neoforge-1.21.1"
+    path: mods/portable_engine_liquid_fuel-2.0.0-neoforge-1.21.1.jar
+    side: both
+  - name: "potion_combiner-1.21.1-Neoforge-1.0.0"
+    path: mods/potion_combiner-1.21.1-Neoforge-1.0.0.jar
+    side: both
+  - name: "Powah-6.2.10"
+    path: mods/Powah-6.2.10.jar
+    side: both
+  - name: "prickle-neoforge-1.21.1-21.1.11"
+    path: mods/prickle-neoforge-1.21.1-21.1.11.jar
+    side: both
+  - name: "puffish_attributes-0.8.2-1.21-neoforge"
+    path: mods/puffish_attributes-0.8.2-1.21-neoforge.jar
+    side: both
+  - name: "puffish_skills-0.18.0-1.21-neoforge"
+    path: mods/puffish_skills-0.18.0-1.21-neoforge.jar
+    side: both
+  - name: "PuzzlesLib-v21.1.52-1.21.1-NeoForge"
+    path: mods/PuzzlesLib-v21.1.52-1.21.1-NeoForge.jar
+    side: both
+  - name: "recipeessentials-1.21-4.0"
+    path: mods/recipeessentials-1.21-4.0.jar
+    side: both
+  - name: "redirected-neoforge-1.0.0-1.21.1"
+    path: mods/redirected-neoforge-1.0.0-1.21.1.jar
+    side: both
+  - name: "reeses-sodium-options-neoforge-1.8.3+mc1.21.4"
+    path: mods/reeses-sodium-options-neoforge-1.8.3+mc1.21.4.jar
+    side: both
+  - name: "refurbished_furniture-neoforge-1.21.1-1.0.22"
+    path: mods/refurbished_furniture-neoforge-1.21.1-1.0.22.jar
+    side: both
+  - name: "resourcefulconfig-neoforge-1.21-3.0.11"
+    path: mods/resourcefulconfig-neoforge-1.21-3.0.11.jar
+    side: both
+  - name: "resourcefullib-neoforge-1.21-3.0.12"
+    path: mods/resourcefullib-neoforge-1.21-3.0.12.jar
+    side: both
+  - name: "rhino-2101.2.7-build.85"
+    path: mods/rhino-2101.2.7-build.85.jar
+    side: both
+  - name: "Ribbits-1.21.1-NeoForge-4.1.6"
+    path: mods/Ribbits-1.21.1-NeoForge-4.1.6.jar
+    side: both
+  - name: "rightclickharvest-neoforge-4.6.1+1.21.1"
+    path: mods/rightclickharvest-neoforge-4.6.1+1.21.1.jar
+    side: both
+  - name: "ritchiesprojectilelib-2.1.2-mc.1.21.1-neoforge"
+    path: mods/ritchiesprojectilelib-2.1.2-mc.1.21.1-neoforge.jar
+    side: both
+  - name: "RPG Potions - Neoforge - MC 1.21.1 - 1.2.0"
+    path: mods/RPG Potions - Neoforge - MC 1.21.1 - 1.2.0.jar
+    side: both
+  - name: "sablecollisiondamage-1.0.7"
+    path: mods/sablecollisiondamage-1.0.7.jar
+    side: both
+  - name: "sable-neoforge-1.21.1-1.2.2"
+    path: mods/sable-neoforge-1.21.1-1.2.2.jar
+    side: both
+  - name: "ScalableCatsForce-NeoForge-3.7.1-build-11-with-library"
+    path: mods/ScalableCatsForce-NeoForge-3.7.1-build-11-with-library.jar
+    side: both
+  - name: "Searchables-neoforge-1.21.1-1.0.2"
+    path: mods/Searchables-neoforge-1.21.1-1.0.2.jar
+    side: both
+  - name: "SereneSeasons-neoforge-1.21.1-10.1.0.3"
+    path: mods/SereneSeasons-neoforge-1.21.1-10.1.0.3.jar
+    side: both
+  - name: "servercore-neoforge-1.5.19+1.21.1"
+    path: mods/servercore-neoforge-1.5.19+1.21.1.jar
+    side: both
+  - name: "shellbound_for_airship-1.0.0-neoforge"
+    path: mods/shellbound_for_airship-1.0.0-neoforge.jar
+    side: both
+  - name: "simple_villager_follow-neoforge-1.21.1-1.0.0"
+    path: mods/simple_villager_follow-neoforge-1.21.1-1.0.0.jar
+    side: both
+  - name: "simplyswords-neoforge-1.63.0-1.21.1"
+    path: mods/simplyswords-neoforge-1.63.0-1.21.1.jar
+    side: both
+  - name: "SimplyTooltips-neoforge-0.1.3"
+    path: mods/SimplyTooltips-neoforge-0.1.3.jar
+    side: both
+  - name: "sky_tiger_air_ballon-1.0.0-neoforge-1.21.1"
+    path: mods/sky_tiger_air_ballon-1.0.0-neoforge-1.21.1.jar
+    side: both
+  - name: "SkyVillages-1.0.6-1.21.x-neoforge-release"
+    path: mods/SkyVillages-1.0.6-1.21.x-neoforge-release.jar
+    side: both
+  - name: "sky_whale_ship-neoforge-1.21.1"
+    path: mods/sky_whale_ship-neoforge-1.21.1.jar
+    side: both
+  - name: "sliceanddice-forge-4.2.4"
+    path: mods/sliceanddice-forge-4.2.4.jar
+    side: both
+  - name: "smoothchunk-1.21-4.1"
+    path: mods/smoothchunk-1.21-4.1.jar
+    side: both
+  - name: "snowundertrees-1.21.1-1.5.1"
+    path: mods/snowundertrees-1.21.1-1.5.1.jar
+    side: both
+  - name: "SOB-NeoForge-1.21.1-1.0.0"
+    path: mods/SOB-NeoForge-1.21.1-1.0.0.jar
+    side: both
+  - name: "sophisticatedbackpacks-1.21.1-3.25.64.1919"
+    path: mods/sophisticatedbackpacks-1.21.1-3.25.64.1919.jar
+    side: both
+  - name: "sophisticatedcore-1.21.1-1.4.60.2044"
+    path: mods/sophisticatedcore-1.21.1-1.4.60.2044.jar
+    side: both
+  - name: "sound-physics-remastered-neoforge-1.21.1-1.5.1"
+    path: mods/sound-physics-remastered-neoforge-1.21.1-1.5.1.jar
+    side: both
+  - name: "spark-1.10.124-neoforge"
+    path: mods/spark-1.10.124-neoforge.jar
+    side: both
+  - name: "sparsestructures-neoforge-1.21.1-3.0"
+    path: mods/sparsestructures-neoforge-1.21.1-3.0.jar
+    side: both
+  - name: "stackable_stew_and_soup-merged-1.21.1-2.0.1"
+    path: mods/stackable_stew_and_soup-merged-1.21.1-2.0.1.jar
+    side: both
+  - name: "stackrefill-1.21.1-4.9"
+    path: mods/stackrefill-1.21.1-4.9.jar
+    side: both
+  - name: "starterkit-1.21.1-8.1"
+    path: mods/starterkit-1.21.1-8.1.jar
+    side: both
+  - name: "Stoneworks-v21.1.0-1.21.1-NeoForge"
+    path: mods/Stoneworks-v21.1.0-1.21.1-NeoForge.jar
+    side: both
+  - name: "structureessentials-1.21.1-5.0"
+    path: mods/structureessentials-1.21.1-5.0.jar
+    side: both
+  - name: "SubtleEffects-neoforge-1.21.1-1.14.3"
+    path: mods/SubtleEffects-neoforge-1.21.1-1.14.3.jar
+    side: both
+  - name: "supermartijn642configlib-1.1.8-neoforge-mc1.21"
+    path: mods/supermartijn642configlib-1.1.8-neoforge-mc1.21.jar
+    side: both
+  - name: "supermartijn642corelib-1.1.21-neoforge-mc1.21"
+    path: mods/supermartijn642corelib-1.1.21-neoforge-mc1.21.jar
+    side: both
+  - name: "supplementaries-neoforge-1.21.1-3.6.7"
+    path: mods/supplementaries-neoforge-1.21.1-3.6.7.jar
+    side: both
+  - name: "takesapillage-neoforge-1.0.12+mc1.21.1"
+    path: mods/takesapillage-neoforge-1.0.12+mc1.21.1.jar
+    side: both
+  - name: "t_and_t-neoforge-fabric-1.13.9+1.21.1"
+    path: mods/t_and_t-neoforge-fabric-1.13.9+1.21.1.jar
+    side: both
+  - name: "TerraBlender-neoforge-1.21.1-4.1.0.8"
+    path: mods/TerraBlender-neoforge-1.21.1-4.1.0.8.jar
+    side: both
+  - name: "the_bumblezone-7.15.0+1.21.1-neoforge"
+    path: mods/the_bumblezone-7.15.0+1.21.1-neoforge.jar
+    side: both
+  - name: "The_Undergarden-1.21.1-0.9.6"
+    path: mods/The_Undergarden-1.21.1-0.9.6.jar
+    side: both
+  - name: "time_on_display-merged-1.21-2.0.0"
+    path: mods/time_on_display-merged-1.21-2.0.0.jar
+    side: both
+  - name: "TinySkeletons-v21.1.0-1.21.1-NeoForge"
+    path: mods/TinySkeletons-v21.1.0-1.21.1-NeoForge.jar
+    side: both
+  - name: "tipsmod-neoforge-1.21.1-21.1.3"
+    path: mods/tipsmod-neoforge-1.21.1-21.1.3.jar
+    side: both
+  - name: "toms_storage-1.21-2.3.2"
+    path: mods/toms_storage-1.21-2.3.2.jar
+    side: both
+  - name: "torchmaster-neoforge-1.21.1-21.1.9"
+    path: mods/torchmaster-neoforge-1.21.1-21.1.9.jar
+    side: both
+  - name: "towed-1.2.0"
+    path: mods/towed-1.2.0.jar
+    side: both
+  - name: "trading_floor-3.0.16"
+    path: mods/trading_floor-3.0.16.jar
+    side: both
+  - name: "TradingPost-v21.1.1-1.21.1-NeoForge"
+    path: mods/TradingPost-v21.1.1-1.21.1-NeoForge.jar
+    side: both
+  - name: "treephysics-neoforge-1.21.1"
+    path: mods/treephysics-neoforge-1.21.1.jar
+    side: both
+  - name: "trimeffects-neoforge-mc1.21-2.1.1"
+    path: mods/trimeffects-neoforge-mc1.21-2.1.1.jar
+    side: both
+  - name: "txnilib-neoforge-1.0.24-1.21.1"
+    path: mods/txnilib-neoforge-1.0.24-1.21.1.jar
+    side: both
+  - name: "underlay-1.0.2-neoforge-mc1.21.1"
+    path: mods/underlay-1.0.2-neoforge-mc1.21.1.jar
+    side: both
+  - name: "underwater_village-1.0.2-neoforge-1.21.1"
+    path: mods/underwater_village-1.0.2-neoforge-1.21.1.jar
+    side: both
+  - name: "unlocked_typing-merged-1.21.1-1.0.1"
+    path: mods/unlocked_typing-merged-1.21.1-1.0.1.jar
+    side: both
+  - name: "VanillaBackport-neoforge-1.21.1-1.1.7.10"
+    path: mods/VanillaBackport-neoforge-1.21.1-1.1.7.10.jar
+    side: both
+  - name: "veinmining-neoforge-5.0.0-beta.2+1.21"
+    path: mods/veinmining-neoforge-5.0.0-beta.2+1.21.jar
+    side: both
+  - name: "villagesandpillages-neoforge-mc1.21.1-1.0.3"
+    path: mods/villagesandpillages-neoforge-mc1.21.1-1.0.3.jar
+    side: both
+  - name: "visuality-forge-2.1.0"
+    path: mods/visuality-forge-2.1.0.jar
+    side: both
+  - name: "VisualWorkbench-v21.1.1-1.21.1-NeoForge"
+    path: mods/VisualWorkbench-v21.1.1-1.21.1-NeoForge.jar
+    side: both
+  - name: "voidtotem-neoforge-1.21.1-4.0.0"
+    path: mods/voidtotem-neoforge-1.21.1-4.0.0.jar
+    side: both
+  - name: "watut-neoforge-1.21.0-1.2.7"
+    path: mods/watut-neoforge-1.21.0-1.2.7.jar
+    side: both
+  - name: "waystones-neoforge-1.21.1-21.1.34"
+    path: mods/waystones-neoforge-1.21.1-21.1.34.jar
+    side: both
+  - name: "waystonessable-1.0.3"
+    path: mods/waystonessable-1.0.3.jar
+    side: both
+  - name: "weaponmaster_ydm-1.21.1-neoforge-4.2.7"
+    path: mods/weaponmaster_ydm-1.21.1-neoforge-4.2.7.jar
+    side: both
+  - name: "wider_ender_chests-neoforge-1.21.1-1.0.4"
+    path: mods/wider_ender_chests-neoforge-1.21.1-1.0.4.jar
+    side: both
+  - name: "wirelesschargers-1.0.9a-neoforge-mc1.21"
+    path: mods/wirelesschargers-1.0.9a-neoforge-mc1.21.jar
+    side: both
+  - name: "WitherSkeletonTweaks-1.21.1-10.1.1"
+    path: mods/WitherSkeletonTweaks-1.21.1-10.1.1.jar
+    side: both
+  - name: "wither_spawn_animation-1.6.2-neoforge-1.21.1"
+    path: mods/wither_spawn_animation-1.6.2-neoforge-1.21.1.jar
+    side: both
+  - name: "yeetusexperimentus-neoforge-87.0.0"
+    path: mods/yeetusexperimentus-neoforge-87.0.0.jar
+    side: both
+  - name: "yet_another_config_lib_v3-3.8.2+1.21.1-neoforge"
+    path: mods/yet_another_config_lib_v3-3.8.2+1.21.1-neoforge.jar
+    side: both
+  - name: "YungsApi-1.21.1-NeoForge-5.1.6"
+    path: mods/YungsApi-1.21.1-NeoForge-5.1.6.jar
+    side: both
+  - name: "YungsBetterDesertTemples-1.21.1-NeoForge-4.1.5"
+    path: mods/YungsBetterDesertTemples-1.21.1-NeoForge-4.1.5.jar
+    side: both
+  - name: "YungsBetterDungeons-1.21.1-NeoForge-5.1.4"
+    path: mods/YungsBetterDungeons-1.21.1-NeoForge-5.1.4.jar
+    side: both
+  - name: "YungsBetterEndIsland-1.21.1-NeoForge-3.1.2"
+    path: mods/YungsBetterEndIsland-1.21.1-NeoForge-3.1.2.jar
+    side: both
+  - name: "YungsBetterJungleTemples-1.21.1-NeoForge-3.1.2"
+    path: mods/YungsBetterJungleTemples-1.21.1-NeoForge-3.1.2.jar
+    side: both
+  - name: "YungsBetterMineshafts-1.21.1-NeoForge-5.1.1"
+    path: mods/YungsBetterMineshafts-1.21.1-NeoForge-5.1.1.jar
+    side: both
+  - name: "YungsBetterNetherFortresses-1.21.1-NeoForge-3.1.5"
+    path: mods/YungsBetterNetherFortresses-1.21.1-NeoForge-3.1.5.jar
+    side: both
+  - name: "YungsBetterOceanMonuments-1.21.1-NeoForge-4.1.2"
+    path: mods/YungsBetterOceanMonuments-1.21.1-NeoForge-4.1.2.jar
+    side: both
+  - name: "YungsBetterStrongholds-1.21.1-NeoForge-5.1.3"
+    path: mods/YungsBetterStrongholds-1.21.1-NeoForge-5.1.3.jar
+    side: both
+  - name: "YungsBetterWitchHuts-1.21.1-NeoForge-4.1.1"
+    path: mods/YungsBetterWitchHuts-1.21.1-NeoForge-4.1.1.jar
+    side: both
+  - name: "YungsBridges-1.21.1-NeoForge-5.1.1"
+    path: mods/YungsBridges-1.21.1-NeoForge-5.1.1.jar
+    side: both
+  - name: "YungsExtras-1.21.1-NeoForge-5.1.1"
+    path: mods/YungsExtras-1.21.1-NeoForge-5.1.1.jar
+    side: both
+  - name: "zombie_variants-neoforge-1.0.3-1.21.1"
+    path: mods/zombie_variants-neoforge-1.0.3-1.21.1.jar
+    side: both
