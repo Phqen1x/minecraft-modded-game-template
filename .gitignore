@@ -1,8 +1,38 @@
-# Build artifacts
-dist/
+# Server runtime files (downloaded on first run)
+server.jar
+libraries/
+.mixin.out/
+run.sh
+run.bat
+user_jvm_args.txt
+.previousrun
+*-installer.jar
+*-installer.jar.log
 
-# game-create download cache
-.game-create-cache/
+# Server admin / generated data
+ops.json
+banned-ips.json
+banned-players.json
+whitelist.json
+usercache.json
+.sable/
+automessage_data/
+dynamic-data-pack-cache/
+journeymap/
+
+# World data
+world/
+world_nether/
+world_the_end/
+world_*/
+
+# Logs
+logs/
+crash-reports/
+
+# NeoForge cache
+local/
+ldlib/
 
 # OS files
 .DS_Store
